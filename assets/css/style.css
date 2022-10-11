@@ -25,14 +25,43 @@ nav{
     top:2px;
 }
 
-#search{
-    text-align: center;
-    padding: 5px;
+.hero-section{
+    display: flex;
+    width: 100%;
+}
+
+.hero-image{
     position: relative;
+    z-index: 1;
+    max-width: 100%;   
+}
+
+.hero-content{
+    position: absolute;
+    display: flex;
+    height: 90%;
+    margin-left: 30px;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: left;
+    z-index: 2;
+    color: white;
+}
+
+.hero-content h1{
+    font-size: 90px;
+}
+
+.hero-content h3{
+    font-size: 40px;
+}
+
+.hero-content #search{
+    padding: 5px;
     border-radius: 15px;
     background-color: #4f4f4f;
-    top:300px;
-    left:100px;
-    width:450px;
-    height:60px;
+    /* top:300px;
+    left:100px; */
+    width:350px;
+    /*height:60px;*/
 }
