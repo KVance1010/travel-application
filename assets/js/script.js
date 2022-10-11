@@ -1,4 +1,3 @@
-
 const options = {
 	method: 'GET',
 	headers: {
@@ -6,8 +5,15 @@ const options = {
 		'X-RapidAPI-Host': 'translated-mymemory---translation-memory.p.rapidapi.com'
 	}
 };
-let name = 'brazil'
+
 let textVal = 'chicken'
+
+
+function genContent(){
+
+}
+
+function runSearch(name){
 fetch('https://restcountries.com/v3.1/name/'+name)
 	.then(function (response) {
 		return response.json();
@@ -26,17 +32,17 @@ fetch('https://restcountries.com/v3.1/name/'+name)
 		// 		console.log(data)
 		// 	})
 		// 	.catch(err => console.error(err));
+		genContent()
 	})
 	.catch(err => console.error(err))
 
-
+}
 
 
 const searchResult = document.getElementById('search');
 
 searchResult.addEventListener('keypress', (event) =>{
 	if(event.key === "Enter"){
-		event.preventDefault();
-		console.log(event.target.value);
+		runSearch(event.target.value);
 	}
 });
