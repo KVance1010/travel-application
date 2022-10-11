@@ -1,3 +1,4 @@
+/*
 const options = {
 	method: 'GET',
 	headers: {
@@ -16,4 +17,9 @@ fetch('https://restcountries.com/v3.1/name/nauru')
 // 	.then(response => console.log(response))
 // 	.catch(err => console.error(err));
 
-	
+*/
+const searchResult = document.getElementById('search');
+
+searchResult.addEventListener('keyup', (event) =>{
+	console.log(event.target.value);
+});
