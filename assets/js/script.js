@@ -13,14 +13,10 @@ fetch('https://restcountries.com/v3.1/name/'+name)
 		return response.json();
 	})
 	.then(function (data) {
-		console.log(data)
 		let langOb = data[0].languages
-		console.log(langOb)
 		let langArr = Object.values(langOb) 
 		let langName = langArr[0]
-		console.log(langName)
 		langValue = languages[langName]
-		console.log(langValue)
 		// fetch('https://translated-mymemory---translation-memory.p.rapidapi.com/api/get?langpair=en%7C'+langValue+'&q='+textVal+'&mt=1&onlyprivate=0&de=a%40b.c', options)
 		// 	.then(function (response) {
 		// 		return response.json();
