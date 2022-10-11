@@ -14,6 +14,7 @@ fetch('https://restcountries.com/v3.1/name/'+name)
 	})
 	.then(function (data) {
 		let langOb = data[0].languages
+		console.log(data)
 		let langArr = Object.values(langOb) 
 		let langName = langArr[0]
 		langValue = languages[langName]
