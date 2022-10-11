@@ -1,0 +1,19 @@
+nav{
+    color: white;
+    background-color: teal;
+    height:50px;
+}
+
+.nav-left{
+    position:relative;
+    left:30px;
+    font-size: 30px;
+}
+.nav-right{
+    float: right;
+    text-decoration:none;
+    padding-left:16px;
+    position:relative;
+    right: 30px;
+    font-size: 30px;
+}
