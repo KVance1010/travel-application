@@ -20,6 +20,9 @@ fetch('https://restcountries.com/v3.1/name/nauru')
 */
 const searchResult = document.getElementById('search');
 
-searchResult.addEventListener('keyup', (event) =>{
-	console.log(event.target.value);
+searchResult.addEventListener('keypress', (event) =>{
+	if(event.key === "Enter"){
+		event.preventDefault();
+		console.log(event.target.value);
+	}
 });
