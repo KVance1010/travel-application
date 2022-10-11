@@ -18,4 +18,8 @@ fetch('https://restcountries.com/v3.1/name/nauru')
 // 	.catch(err => console.error(err));
 
 */
-	
+const searchResult = document.getElementById('search');
+
+searchResult.addEventListener('keyup', (event) =>{
+	console.log(event.target.value);
+});

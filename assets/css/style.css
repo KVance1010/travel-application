@@ -8,6 +8,7 @@ nav{
     position:relative;
     left:30px;
     font-size: 30px;
+    top:2px;
 }
 .nav-right{
     float: right;
@@ -16,4 +17,17 @@ nav{
     position:relative;
     right: 30px;
     font-size: 30px;
+    top:2px;
+}
+
+#search{
+    text-align: center;
+    padding: 5px;
+    position: relative;
+    border-radius: 15px;
+    background-color: #4f4f4f;
+    top:300px;
+    left:100px;
+    width:450px;
+    height:60px;
 }
