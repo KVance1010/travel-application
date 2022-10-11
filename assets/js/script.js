@@ -1,4 +1,4 @@
-/*
+
 const options = {
 	method: 'GET',
 	headers: {
@@ -6,18 +6,35 @@ const options = {
 		'X-RapidAPI-Host': 'translated-mymemory---translation-memory.p.rapidapi.com'
 	}
 };
+let name = 'brazil'
+let textVal = 'chicken'
+fetch('https://restcountries.com/v3.1/name/'+name)
+	.then(function (response) {
+		return response.json();
+	})
+	.then(function (data) {
+		console.log(data)
+		let langOb = data[0].languages
+		console.log(langOb)
+		let langArr = Object.values(langOb) 
+		let langName = langArr[0]
+		console.log(langName)
+		langValue = languages[langName]
+		console.log(langValue)
+		// fetch('https://translated-mymemory---translation-memory.p.rapidapi.com/api/get?langpair=en%7C'+langValue+'&q='+textVal+'&mt=1&onlyprivate=0&de=a%40b.c', options)
+		// 	.then(function (response) {
+		// 		return response.json();
+		// 	})
+		// 	.then(function (data) {
+		// 		console.log(data)
+		// 	})
+		// 	.catch(err => console.error(err));
+	})
+	.catch(err => console.error(err))
 
-fetch('https://restcountries.com/v3.1/name/nauru')
-.then(response => response.json()
-.then(response => console.log(response))
-.catch(err => console.error(err)))
 
-// fetch('https://translated-mymemory---translation-memory.p.rapidapi.com/api/get?langpair=en%7C'+langValue+'&q=Hello%20World!&mt=1&onlyprivate=0&de=a%40b.c', options)
-// 	.then(response => response.json())
-// 	.then(response => console.log(response))
-// 	.catch(err => console.error(err));
 
-*/
+
 const searchResult = document.getElementById('search');
 
 searchResult.addEventListener('keypress', (event) =>{
