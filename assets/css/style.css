@@ -1,0 +1,33 @@
+nav{
+    color: white;
+    background-color: teal;
+    height:50px;
+}
+
+.nav-left{
+    position:relative;
+    left:30px;
+    font-size: 30px;
+    top:2px;
+}
+.nav-right{
+    float: right;
+    text-decoration:none;
+    padding-left:16px;
+    position:relative;
+    right: 30px;
+    font-size: 30px;
+    top:2px;
+}
+
+#search{
+    text-align: center;
+    padding: 5px;
+    position: relative;
+    border-radius: 15px;
+    background-color: #4f4f4f;
+    top:300px;
+    left:100px;
+    width:450px;
+    height:60px;
+}
