@@ -1,4 +1,3 @@
-/*
 const languages = {
 	Abkhazian: 'ab',
 	Afar: 'aa',
@@ -196,4 +195,3 @@ const languages = {
 	Chuang: 'za',
 	Zulu: 'zu',
 };
-*/
