@@ -1,6 +1,6 @@
 let nameInputEl = $('#search');
 
-// Autocomplete widget
+// Autocomplete widget for searching a country
 $(function () {
   let countryArr = []
   fetch('https://restcountries.com/v3.1/all')
