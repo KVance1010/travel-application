@@ -1,4 +1,4 @@
-/**** Common pay schemes ****/
+/**** Common layout schemes ****/
 :root {
 	--backgroundColor: darkslategray;
 	--textColor: aliceblue;
@@ -103,21 +103,21 @@ body {
 .facts-container h2 {
 	font-size: xxx-large;
 }
-.facts-container div{
-    margin: 20px;
+.facts-container div {
+	margin: 20px;
 }
 
-.fact-titles{
-    font-weight: bold;
-    font-size: x-large;
+.fact-titles {
+	font-weight: bold;
+	font-size: x-large;
 }
-.fact-content{
-    font-size: large;
+.fact-content {
+	font-size: large;
 }
-
 
 /**** Media queries ****/
 @media screen and (max-width: 1274px) {
+	/* Hero */
 	.hero-content {
 		height: 70%;
 	}
@@ -130,6 +130,7 @@ body {
 }
 
 @media screen and (max-width: 1074px) {
+	/* Hero */
 	.hero-content {
 		height: 50%;
 	}
@@ -141,24 +142,24 @@ body {
 		font-size: 25px;
 		margin-bottom: 3rem;
 	}
-    .facts-container {
-        padding: 25px;
-        color: var(--textColor);
-    }
-    .facts-container h2 {
-        font-size: xx-large;
-    }
-    .facts-container div{
-        margin: 20px;
-    }
-    
-    .fact-titles{
-        font-weight: bold;
-        font-size: large;
-    }
-    .fact-content{
-        font-size: medium;
-    }
+	/* Facts */
+	.facts-container {
+		padding: 25px;
+		color: var(--textColor);
+	}
+	.facts-container h2 {
+		font-size: xx-large;
+	}
+	.facts-container div {
+		margin: 20px;
+	}
+	.fact-titles {
+		font-weight: bold;
+		font-size: large;
+	}
+	.fact-content {
+		font-size: medium;
+	}
 }
 
 @media screen and (max-width: 830px) {
@@ -177,25 +178,26 @@ body {
 		font-size: 20px;
 		margin-bottom: 3rem;
 	}
-    .facts-container {
-        padding: 25px;
-    }
-    .facts-container h2 {
-        font-size: large;
-    }
-    .facts-container div{
-        margin: 10px;
-    }
-    
-    .fact-titles{
-        font-weight: bold;
-        font-size: medium;
-    }
-    .fact-content{
-        font-size: medium;
-    }
+	.facts-container {
+		padding: 25px;
+	}
+	.facts-container h2 {
+		font-size: large;
+	}
+	.facts-container div {
+		margin: 10px;
+	}
+
+	.fact-titles {
+		font-weight: bold;
+		font-size: medium;
+	}
+	.fact-content {
+		font-size: medium;
+	}
 }
 @media screen and (max-width: 674px) {
+	/* Hero */
 	.hero-content {
 		height: 35%;
 	}
@@ -209,10 +211,12 @@ body {
 	}
 }
 @media screen and (max-width: 566px) {
+	/* Nav Bar */
 	.nav-left {
 		font-size: 25px;
 		top: 8px;
 	}
+	/* Hero */
 	.hero-content {
 		height: 30%;
 	}
@@ -225,46 +229,49 @@ body {
 		font-weight: 500;
 		margin-bottom: 2rem;
 	}
-    .info-container {
-        flex-wrap: wrap;
-    }
-    .info-container img {
-        width: 100vw;
-    }
-    .facts-container {
-        width: 100%;
-    }
-    .facts-container h2 {
-        text-align: center;
-    }
-
-    .info {
-        padding: 0;
-        text-align: center;
-    }
-    
+	/* Facts */
+	.info-container {
+		flex-wrap: wrap;
+	}
+	.info-container img {
+		width: 100vw;
+	}
+	.facts-container {
+		width: 100%;
+	}
+	.facts-container h2 {
+		text-align: center;
+	}
+	.info {
+		padding: 0;
+		text-align: center;
+	}
 }
 
 /* TODO: turn the nav bar into a hamburger menu at 466 */
 @media screen and (max-width: 466px) {
-	nav {
+	/* Nav Bar */
+	nav {	
 		height: 40px;
 	}
 	.nav-left {
 		font-size: 20px;
 	}
+	/* Hero */
 	.hero-content {
 		height: 25%;
 	}
 }
 
 @media screen and (max-width: 436px) {
+	/* Nav Bar */
 	nav {
 		height: 40px;
 	}
 	.nav-left {
 		font-size: 20px;
 	}
+	/* Hero */
 	.hero-content {
 		height: 22%;
 	}

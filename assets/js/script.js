@@ -20,11 +20,9 @@ let textVal = 'chicken';
 function genContent(data) {
 	
 	// clears out any existing country information
-	// let child = contentInfo.lastElementChild;
-	// while (child){
-	// 	contactInfo.removeChild(child);
-	// 	child = contactInfo.lastElementChild;
-	// }
+	while (contentInfo.firstChild) {
+		contentInfo.firstChild.remove();
+	}
 
 	// Main container
 	let factsDiv = document.createElement('div');
@@ -101,7 +99,7 @@ function genContent(data) {
 	factContent.appendChild(divCapital);
 	factContent.appendChild(divPopulation);
 	factContent.appendChild(divLanguage);
-	// factContent.appendChild(factsCurrency);
+	factContent.appendChild(divCurrency);
 	factsDiv.append(flagImg);
 	factsDiv.append(factContent);
 	contentInfo.append(factsDiv);
