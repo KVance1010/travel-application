@@ -5,6 +5,7 @@ let type;
 let langValue;
 let converted;
 let capitalCity;
+let currencyName;
 let currencyAmount = document.createElement('span');
 const contentInfo = document.querySelector('#content');
 const searchResult = document.getElementById('search');
@@ -24,6 +25,12 @@ const options = {
 
 /************************  Functions  *********************************/
 
+// Displays the nav bar after a search is entered
+function displayNavBar() {
+	navMenu.style.display = 'flex';
+}
+
+// Converts dollar into foreign currency
 function currencyConverter(amount, landing) {
 	let requestURL = 'https://api.exchangerate.host/latest?base=USD';
 	let request = new XMLHttpRequest();
@@ -35,12 +42,11 @@ function currencyConverter(amount, landing) {
 		let response = request.response;
 		rate = response.rates[type];
 		converted = rate * amount;
-		console.log(converted.toFixed(2));
-		currencyAmount.textContent = converted.toFixed(2);
+		currencyAmount.textContent = converted.toFixed(2) + ' ' + currencyName;
 	};
 }
 
-// Converts dollar into foreign currency
+// Event handler for search that was entered 
 function currencyEventHandler() {
 	const convertedCurrencyAmount = document.querySelector('#currencyInput');
 	convertedCurrencyAmount.addEventListener('keypress', (event) => {
@@ -60,9 +66,10 @@ function genContent(data) {
 	// Clears out old currency information
 	currencyAmount.textContent = '';
 
-	// Main container
+	// Facts container
 	let factsDiv = document.createElement('div');
 	factsDiv.classList.add('info-container');
+	factsDiv.setAttribute('id', 'facts');
 
 	// Generate the flag img
 	let flagImg = document.createElement('img');
@@ -120,7 +127,8 @@ function genContent(data) {
 	let currency = data[0].currencies;
 	let curArr = Object.values(currency);
 	type = Object.keys(currency);
-	let curValue = curArr[0];
+	curValue = curArr[0];
+	currencyName =  curValue.name;
 	let divCurrency = document.createElement('div');
 	divCurrency.setAttribute('class', 'info');
 	let fact4 = document.createElement('span');
@@ -128,7 +136,7 @@ function genContent(data) {
 	fact4.textContent = 'Currency: ';
 	let fact4Content = document.createElement('span');
 	fact4Content.classList.add('fact-content');
-	fact4Content.textContent = curValue.name;
+	fact4Content.textContent = currencyName;
 	divCurrency.append(fact4);
 	divCurrency.append(fact4Content);
 
@@ -168,74 +176,58 @@ function genContent(data) {
 	factsDiv.append(flagImg);
 	factsDiv.append(factContent);
 	contentInfo.append(factsDiv);
+
 	currencyEventHandler();
+	weatherForecast();
+	displayNavBar()
 }
 
 function langContent() {
-	//add div for translation parents
+	console.log(backImg)
 
+	
+	//add div for translation parents
+	let transDiv = document.createElement('div');
+	transDiv.classList.add('info-container');
+	transDiv.setAttribute('id', 'translation');
 	// div container
+	
 	// 2 children, one for translations and one for the map
+	let mapImg = document.createElement('img');
+	mapImg.setAttribute('src', backImg);
+	let translatedWords = document.createElement('div')
+
 	// another div container for translations
 	// a parent div for each line we would like translated
 	// span for english text and a span for the translation
-
-	const text1 = 'Hello';
+	let textTest = ['hello'];
+ 	let translated = ['Hello','Thank you','Goodbye','How are you?','Where is the bathroom?','My name is,']
+	for(i=0;i<textTest.length;i++){
+		let text1 = textTest[i]
 	// fetch('https://translated-mymemory---translation-memory.p.rapidapi.com/api/get?langpair=en%7C'+langValue+'&q='+text1+'&mt=1&onlyprivate=0&de=a%40b.c', options)
 	// 		.then(function (response) {
 	// 			return response.json();
 	// 		})
 	// 		.then(function (data) {
-	// 			console.log(data);
-	// 			let transText = data.responseData.translatedText;
-	// 			console.log(transText)
+	//			let transText = data.responseData.translatedText;
+
+	// 			let originText = document.createElement('div')
+	// 			let newText = document.createElement('div')
+	// 			let originTextContent = document.createElement('span')
+	// 			let newTextContent = document.createElement('span')
+	// 			
+	// 			originTextContent.textContent = text1
+	// 			newTextContent.textContent = transText
+	// 			originText.append(originTextContent)
+	//          newText.append(newTextContent)
+	// 			translatedWords.append(originText)
+	// 			translatedWords.append(newText)	
 	// 		})
 	// 		.catch(err => console.error(err));
-	const text2 = 'Thank you';
-	// fetch('https://translated-mymemory---translation-memory.p.rapidapi.com/api/get?langpair=en%7C'+langValue+'&q='+text2+'&mt=1&onlyprivate=0&de=a%40b.c', options)
-	// 	.then(function (response) {
-	// 		return response.json();
-	// 	})
-	// 	.then(function (data) {
-	// 		console.log(data);
-	// 	})
-	// 	.catch(err => console.error(err));
-	const text3 = 'Goodbye';
-	// fetch('https://translated-mymemory---translation-memory.p.rapidapi.com/api/get?langpair=en%7C'+langValue+'&q='+text3+'&mt=1&onlyprivate=0&de=a%40b.c', options)
-	// 	.then(function (response) {
-	// 		return response.json();
-	// 	})
-	// 	.then(function (data) {
-	// 		console.log(data);
-	// 	})
-	// 	.catch(err => console.error(err));
-	const text4 = 'How are you?';
-	// fetch('https://translated-mymemory---translation-memory.p.rapidapi.com/api/get?langpair=en%7C'+langValue+'&q='+text4+'&mt=1&onlyprivate=0&de=a%40b.c', options)
-	// 	.then(function (response) {
-	// 		return response.json();
-	// 	})
-	// 	.then(function (data) {
-	// 		console.log(data);
-	// 	})
-	// 	.catch(err => console.error(err));
-	const text5 = 'Where is the bathroom?';
-	// fetch('https://translated-mymemory---translation-memory.p.rapidapi.com/api/get?langpair=en%7C'+langValue+'&q='+text5+'&mt=1&onlyprivate=0&de=a%40b.c', options)
-	// 	.then(function (response) {
-	// 		return response.json();
-	// 	})
-	// 	.then(function (data) {
-	// 		console.log(data);
-	// 	})
-	// 	.catch(err => console.error(err));
-	const text6 = 'My name is,';
-	// fetch('https://translated-mymemory---translation-memory.p.rapidapi.com/api/get?langpair=en%7C'+langValue+'&q='+text6+'&mt=1&onlyprivate=0&de=a%40b.c', options)
-	// 	.then(function (response) {
-	// 		return response.json();
-	// 	})
-	// 	.then(function (data) {
-	// 		console.log(data);
-	// 	})
-	// 	.catch(err => console.error(err));
+	}
+	transDiv.append(translatedWords)
+	transDiv.append(mapImg)
+	contentInfo.append(transDiv);
 }
 
 // Connects to the server side APIs and collects information about the country and sets the language for the translator
@@ -245,12 +237,13 @@ function runSearch(name) {
 			return response.json();
 		})
 		.then(function (data) {
+			console.log(data)
 			genContent(data);
 			let langOb = data[0].languages;
 			let langArr = Object.values(langOb);
 			let langName = langArr[0];
 			langValue = languages[langName];
-			langContent();
+			
 		})
 		.catch((err) => console.error(err));
 }
@@ -260,18 +253,28 @@ function runSearch(name) {
 // Main Search
 searchResult.addEventListener('keypress', (event) => {
 	if (event.key === 'Enter') {
-		runSearch(event.target.value);
-	}
+		let validate = event.target.value;
+		let onList = 0;
+		for(i=0;i<countryArr.length;i++){
+			if(validate === countryArr[i]){
+				onList = 1;
+			}
+		}
+		if(onList === 1){
+		runSearch(validate);
+		addToSearchList(validate);
+		}else{
+			alert()
+		}
+}
 });
 
 // Burger menu items
 hamburger.addEventListener('click', () => {
-	hamburger.classList.toggle('active');
-	navMenu.classList.toggle('active');
+		hamburger.classList.toggle('active');
+		navMenu.classList.toggle('active');
 });
-navItems.forEach((n) =>
-	n.addEventListener('click', () => {
-		hamburger.classList.remove('active');
-		navMenu.classList.remove('active');
-	})
-);
+// }else{
+// 	hamburger.classList.remove('active');
+// 	navMenu.classList.remove('active');
+// }

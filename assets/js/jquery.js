@@ -1,8 +1,9 @@
 let nameInputEl = $('#search');
-
+let repeat = 1
+let countryArr = []
 // Autocomplete widget for searching a country
 $(function () {
-  let countryArr = []
+  
   fetch('https://restcountries.com/v3.1/all')
   .then(function (response) {
 		return response.json();
@@ -19,3 +20,8 @@ $(function () {
     source: countryArr,
   });
 });
+
+// Dialog box
+function alert(){
+  $( "#dialog" ).dialog()
+}
