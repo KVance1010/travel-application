@@ -7,12 +7,14 @@
 	--contrastColor: #ddb64d;
 	--secondaryTextColor:#104061;
 }
-
 * {
 	padding: 0;
 	margin: 0;
 	font-family: 'Inter', sans-serif;
 	box-sizing: border-box;
+}
+body {
+	background-color: var(--backgroundColor);
 }
 
 /**** Navigation bar ****/
@@ -38,9 +40,8 @@ header {
 	color: var(--contrastColor);
 	font-weight: 700;
 }
-/* TODO fix this so that it only selects the first letter */
-.nav-brand > span::first-letter {
-	color: var(--secondaryTextColor);
+.nav-brand > span{
+	color: var(--contrastColor);
 	font-weight: bolder;
 }
 .nav-menu {
@@ -78,13 +79,11 @@ header {
 	display: flex;
 	width: 100%;
 }
-
 .hero-image {
 	position: relative;
 	z-index: 1;
 	max-width: 100vw;
 }
-
 .hero-content {
 	position: absolute;
 	display: flex;
@@ -98,18 +97,15 @@ header {
 	color: var(--textColor);
 	width: 50%;
 }
-
 .hero-content h1 {
 	font-size: 90px;
 	margin-bottom: 5rem;
 }
-
 .hero-content h3 {
 	width: 50%;
 	font-size: 40px;
 	margin-bottom: 5rem;
 }
-
 .hero-content #search {
 	padding: 5px;
 	border-radius: 15px;
@@ -119,11 +115,7 @@ header {
 	width: 40%;
 }
 
-/**** Main content ****/
-body {
-	background-color: var(--backgroundColor);
-}
-
+/**** Facts Content ****/
 .info-container {
 	display: flex;
 }
@@ -140,7 +132,6 @@ body {
 .facts-container div {
 	margin: 20px;
 }
-
 .fact-titles {
 	font-weight: bold;
 	font-size: x-large;
@@ -159,7 +150,6 @@ body {
 		font-size: 30px;
 	}
 }
-
 @media screen and (max-width: 1074px) {
 	/* Hero */
 	.hero-content h1 {
@@ -189,7 +179,6 @@ body {
 		font-size: medium;
 	}
 }
-
 @media screen and (max-width: 830px) {
 	/* Nav Bar */
 	.hamburger {
@@ -290,7 +279,6 @@ body {
 		text-align: center;
 	}
 }
-
 @media screen and (max-width: 499px) {
 	/* Hero */
 	.hero-content h1 {

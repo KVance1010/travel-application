@@ -24,27 +24,27 @@ const options = {
 
 /************************  Functions  *********************************/
 
-function currencyConverter(amount,landing){
-	var requestURL = 'https://api.exchangerate.host/latest?base=USD';
-var request = new XMLHttpRequest();
-request.open('GET', requestURL);
-request.responseType = 'json';
-request.send();
+function currencyConverter(amount, landing) {
+	let requestURL = 'https://api.exchangerate.host/latest?base=USD';
+	let request = new XMLHttpRequest();
+	request.open('GET', requestURL);
+	request.responseType = 'json';
+	request.send();
 
-request.onload = function() {
-  var response = request.response;
-  rate = response.rates[type]
-  converted = rate * amount
-  console.log(converted.toFixed(2)) 
-  currencyAmount.textContent = converted.toFixed(2);	
-}
+	request.onload = function () {
+		let response = request.response;
+		rate = response.rates[type];
+		converted = rate * amount;
+		console.log(converted.toFixed(2));
+		currencyAmount.textContent = converted.toFixed(2);
+	};
 }
 
-function currencyEventHandler(){
-	const cenvertedCurrencyAmount = document.querySelector('#currencyInput');
-	cenvertedCurrencyAmount.addEventListener('keypress', (event) => {
+function currencyEventHandler() {
+	const convertedCurrencyAmount = document.querySelector('#currencyInput');
+	convertedCurrencyAmount.addEventListener('keypress', (event) => {
 		if (event.key === 'Enter') {
-			currencyConverter(event.target.value,);
+			currencyConverter(event.target.value);
 		}
 	});
 }
@@ -131,102 +131,107 @@ function genContent(data) {
 	divCurrency.append(fact4);
 	divCurrency.append(fact4Content);
 
-	// Currency exchange information
+	// Currency exchange input information
 	let currencyCon = document.createElement('div');
 	currencyCon.setAttribute('class', 'info');
 	let currencyLabel = document.createElement('label');
-	currencyLabel.setAttribute('for','currencyInput' );
+	currencyLabel.setAttribute('for', 'currencyInput');
 	currencyLabel.textContent = 'Enter dollar amount: ';
 	let currencyInput = document.createElement('input');
 	currencyInput.setAttribute('id', 'currencyInput');
 	currencyInput.setAttribute('type', 'text');
+	currencyCon.append(currencyLabel);
+	currencyCon.append(currencyInput);
+
+	// Currency exchange return information
+	let currencyReturn = document.createElement('div');
+	currencyReturn.setAttribute('class', 'info');
 	let currencyInputContent = document.createElement('span');
 	currencyInputContent.setAttribute('class', 'returnCurrency');
 	currencyInputContent.textContent = 'Exchange Amount: ';
-	currencyAmount.setAttribute('class', 'amount');		
-	currencyCon.append(currencyLabel);
-	currencyCon.append(currencyInput);
-	currencyCon.append(currencyInputContent);
-	currencyCon.append(currencyAmount);
+	currencyAmount.setAttribute('class', 'amount');
+	currencyReturn.append(currencyInputContent);
+	currencyReturn.append(currencyAmount);
 
-	// append each portion of facts and the flag to the webpage
+	// append each element to the webpage
 	factContent.appendChild(factsHeader);
 	factContent.appendChild(divCapital);
 	factContent.appendChild(divPopulation);
 	factContent.appendChild(divLanguage);
 	factContent.appendChild(divCurrency);
 	factContent.appendChild(currencyCon);
+	factContent.appendChild(currencyReturn);
 	factsDiv.append(flagImg);
 	factsDiv.append(factContent);
 	contentInfo.append(factsDiv);
 	currencyEventHandler();
 }
 
-function langContent(){
-//add div for translation parents
+function langContent() {
+	//add div for translation parents
 
-// div container
-// 2 children, one for translations and one for the map
-// another div container for translations
-// a parent div for each line we would like translated 
-// span for english text and a span for the translation
+	// div container
+	// 2 children, one for translations and one for the map
+	// another div container for translations
+	// a parent div for each line we would like translated
+	// span for english text and a span for the translation
 
-text1 = 'Hello'
-		// fetch('https://translated-mymemory---translation-memory.p.rapidapi.com/api/get?langpair=en%7C'+langValue+'&q='+text1+'&mt=1&onlyprivate=0&de=a%40b.c', options)
-		// 		.then(function (response) {
-		// 			return response.json();
-		// 		})
-		// 		.then(function (data) {
-		// 			console.log(data);
-		// 			let transText = data.responseData.translatedText;
-		// 			console.log(transText)
-		// 		})
-		// 		.catch(err => console.error(err));
-text2 = 'Thank you'
-		// fetch('https://translated-mymemory---translation-memory.p.rapidapi.com/api/get?langpair=en%7C'+langValue+'&q='+text2+'&mt=1&onlyprivate=0&de=a%40b.c', options)
-			// 	.then(function (response) {
-			// 		return response.json();
-			// 	})
-			// 	.then(function (data) {
-			// 		console.log(data);
-			// 	})
-			// 	.catch(err => console.error(err));
-text3 = 'Goodbye'			
-		// fetch('https://translated-mymemory---translation-memory.p.rapidapi.com/api/get?langpair=en%7C'+langValue+'&q='+text3+'&mt=1&onlyprivate=0&de=a%40b.c', options)
-			// 	.then(function (response) {
-			// 		return response.json();
-			// 	})
-			// 	.then(function (data) {
-			// 		console.log(data);
-			// 	})
-			// 	.catch(err => console.error(err));
-text4 = 'How are you?'
-		// fetch('https://translated-mymemory---translation-memory.p.rapidapi.com/api/get?langpair=en%7C'+langValue+'&q='+text4+'&mt=1&onlyprivate=0&de=a%40b.c', options)
-			// 	.then(function (response) {
-			// 		return response.json();
-			// 	})
-			// 	.then(function (data) {
-			// 		console.log(data);
-			// 	})
-			// 	.catch(err => console.error(err));
-text5 = 'Where is the bathroom?'			
-		// fetch('https://translated-mymemory---translation-memory.p.rapidapi.com/api/get?langpair=en%7C'+langValue+'&q='+text5+'&mt=1&onlyprivate=0&de=a%40b.c', options)
-			// 	.then(function (response) {
-			// 		return response.json();
-			// 	})
-			// 	.then(function (data) {
-			// 		console.log(data);
-			// 	})
-			// 	.catch(err => console.error(err));	
-text6 = 'My name is,'	
-		// fetch('https://translated-mymemory---translation-memory.p.rapidapi.com/api/get?langpair=en%7C'+langValue+'&q='+text6+'&mt=1&onlyprivate=0&de=a%40b.c', options)
-			// 	.then(function (response) {
-			// 		return response.json();
-			// 	})
-			// 	.then(function (data) {
-			// 		console.log(data);
-			// 	})
-			// 	.catch(err => console.error(err));	
+	const text1 = 'Hello';
+	// fetch('https://translated-mymemory---translation-memory.p.rapidapi.com/api/get?langpair=en%7C'+langValue+'&q='+text1+'&mt=1&onlyprivate=0&de=a%40b.c', options)
+	// 		.then(function (response) {
+	// 			return response.json();
+	// 		})
+	// 		.then(function (data) {
+	// 			console.log(data);
+	// 			let transText = data.responseData.translatedText;
+	// 			console.log(transText)
+	// 		})
+	// 		.catch(err => console.error(err));
+	const text2 = 'Thank you';
+	// fetch('https://translated-mymemory---translation-memory.p.rapidapi.com/api/get?langpair=en%7C'+langValue+'&q='+text2+'&mt=1&onlyprivate=0&de=a%40b.c', options)
+	// 	.then(function (response) {
+	// 		return response.json();
+	// 	})
+	// 	.then(function (data) {
+	// 		console.log(data);
+	// 	})
+	// 	.catch(err => console.error(err));
+	const text3 = 'Goodbye';
+	// fetch('https://translated-mymemory---translation-memory.p.rapidapi.com/api/get?langpair=en%7C'+langValue+'&q='+text3+'&mt=1&onlyprivate=0&de=a%40b.c', options)
+	// 	.then(function (response) {
+	// 		return response.json();
+	// 	})
+	// 	.then(function (data) {
+	// 		console.log(data);
+	// 	})
+	// 	.catch(err => console.error(err));
+	const text4 = 'How are you?';
+	// fetch('https://translated-mymemory---translation-memory.p.rapidapi.com/api/get?langpair=en%7C'+langValue+'&q='+text4+'&mt=1&onlyprivate=0&de=a%40b.c', options)
+	// 	.then(function (response) {
+	// 		return response.json();
+	// 	})
+	// 	.then(function (data) {
+	// 		console.log(data);
+	// 	})
+	// 	.catch(err => console.error(err));
+	const text5 = 'Where is the bathroom?';
+	// fetch('https://translated-mymemory---translation-memory.p.rapidapi.com/api/get?langpair=en%7C'+langValue+'&q='+text5+'&mt=1&onlyprivate=0&de=a%40b.c', options)
+	// 	.then(function (response) {
+	// 		return response.json();
+	// 	})
+	// 	.then(function (data) {
+	// 		console.log(data);
+	// 	})
+	// 	.catch(err => console.error(err));
+	const text6 = 'My name is,';
+	// fetch('https://translated-mymemory---translation-memory.p.rapidapi.com/api/get?langpair=en%7C'+langValue+'&q='+text6+'&mt=1&onlyprivate=0&de=a%40b.c', options)
+	// 	.then(function (response) {
+	// 		return response.json();
+	// 	})
+	// 	.then(function (data) {
+	// 		console.log(data);
+	// 	})
+	// 	.catch(err => console.error(err));
 }
 
 // Connects to the server side APIs and collects information about the country and sets the language for the translator
@@ -241,28 +246,28 @@ function runSearch(name) {
 			let langArr = Object.values(langOb);
 			let langName = langArr[0];
 			langValue = languages[langName];
-			langContent()
-			
-			
+			langContent();
 		})
 		.catch((err) => console.error(err));
 }
 
 /************************  Event Listeners  *********************************/
 
+// Main Search
 searchResult.addEventListener('keypress', (event) => {
 	if (event.key === 'Enter') {
 		runSearch(event.target.value);
 	}
 });
 
-
-// burger menu items
-hamburger.addEventListener('click',() => {
-hamburger.classList.toggle("active");
-navMenu.classList.toggle("active");
+// Burger menu items
+hamburger.addEventListener('click', () => {
+	hamburger.classList.toggle('active');
+	navMenu.classList.toggle('active');
 });
-navItems.forEach(n => n.addEventListener("click",() =>{
-    hamburger.classList.remove("active");
-    navMenu.classList.remove("active");
-}));
+navItems.forEach((n) =>
+	n.addEventListener('click', () => {
+		hamburger.classList.remove('active');
+		navMenu.classList.remove('active');
+	})
+);
