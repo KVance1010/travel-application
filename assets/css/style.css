@@ -2,7 +2,6 @@
 :root {
 	--backgroundColor: darkslategray;
 	--textColor: aliceblue;
-	/* --textColor:#b1bbca; */
 	--headerFooterColor: teal;
 	--contrastColor: #ddb64d;
 	--secondaryTextColor:#104061;
@@ -194,7 +193,7 @@ header {
 @media screen and (max-width: 830px) {
 	/* Nav Bar */
 	.hamburger {
-		display: block;
+		display: none;
 	}
 	.hamburger.active .bar:nth-child(2) {
 		opacity: 0;

@@ -28,6 +28,7 @@ const options = {
 // Displays the nav bar after a search is entered
 function displayNavBar() {
 	navMenu.style.display = 'flex';
+	hamburger.style.display = 'block';	
 }
 
 // Converts dollar into foreign currency
@@ -127,7 +128,7 @@ function genContent(data) {
 	let currency = data[0].currencies;
 	let curArr = Object.values(currency);
 	type = Object.keys(currency);
-	curValue = curArr[0];
+	let curValue = curArr[0];
 	currencyName =  curValue.name;
 	let divCurrency = document.createElement('div');
 	divCurrency.setAttribute('class', 'info');
@@ -178,7 +179,7 @@ function genContent(data) {
 	contentInfo.append(factsDiv);
 
 	currencyEventHandler();
-	weatherForecast();
+	weatherForecast(capitalCity);
 	displayNavBar()
 }
 
