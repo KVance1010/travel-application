@@ -183,6 +183,9 @@ function genContent(data) {
 }
 
 function langContent() {
+	console.log(backImg)
+
+	
 	//add div for translation parents
 	let transDiv = document.createElement('div');
 	transDiv.classList.add('info-container');
@@ -190,11 +193,15 @@ function langContent() {
 	// div container
 	
 	// 2 children, one for translations and one for the map
+	let mapImg = document.createElement('img');
+	mapImg.setAttribute('src', backImg);
+	let translatedWords = document.createElement('div')
+
 	// another div container for translations
 	// a parent div for each line we would like translated
 	// span for english text and a span for the translation
-let textTest = ['hello'];
- let translated = ['Hello','Thank you','Goodbye','How are you?','Where is the bathroom?','My name is,']
+	let textTest = ['hello'];
+ 	let translated = ['Hello','Thank you','Goodbye','How are you?','Where is the bathroom?','My name is,']
 	for(i=0;i<textTest.length;i++){
 		let text1 = textTest[i]
 	// fetch('https://translated-mymemory---translation-memory.p.rapidapi.com/api/get?langpair=en%7C'+langValue+'&q='+text1+'&mt=1&onlyprivate=0&de=a%40b.c', options)
@@ -202,13 +209,25 @@ let textTest = ['hello'];
 	// 			return response.json();
 	// 		})
 	// 		.then(function (data) {
-	// 			console.log(data);
-	// 			let transText = data.responseData.translatedText;
-	// 			console.log(transText)
-	//			
+	//			let transText = data.responseData.translatedText;
+
+	// 			let originText = document.createElement('div')
+	// 			let newText = document.createElement('div')
+	// 			let originTextContent = document.createElement('span')
+	// 			let newTextContent = document.createElement('span')
+	// 			
+	// 			originTextContent.textContent = text1
+	// 			newTextContent.textContent = transText
+	// 			originText.append(originTextContent)
+	//          newText.append(newTextContent)
+	// 			translatedWords.append(originText)
+	// 			translatedWords.append(newText)	
 	// 		})
 	// 		.catch(err => console.error(err));
-}
+	}
+	transDiv.append(translatedWords)
+	transDiv.append(mapImg)
+	contentInfo.append(transDiv);
 }
 
 // Connects to the server side APIs and collects information about the country and sets the language for the translator
@@ -234,9 +253,20 @@ function runSearch(name) {
 // Main Search
 searchResult.addEventListener('keypress', (event) => {
 	if (event.key === 'Enter') {
-		runSearch(event.target.value);
-		addToSearchList(event.target.value);
-	}
+		let validate = event.target.value;
+		let onList = 0;
+		for(i=0;i<countryArr.length;i++){
+			if(validate === countryArr[i]){
+				onList = 1;
+			}
+		}
+		if(onList === 1){
+		runSearch(validate);
+		addToSearchList(validate);
+		}else{
+			alert()
+		}
+}
 });
 
 // Burger menu items

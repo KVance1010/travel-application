@@ -1,4 +1,5 @@
-let backImg
+let backImg;
+const weatherPortion =document.querySelector('.weather');
 
 function weatherForecast(){
     fetch("http://api.openweathermap.org/geo/1.0/direct?q="+capitalCity+"&limit=5&appid=239391e5829e93d40ba73fc38797a87d")
@@ -19,20 +20,82 @@ function weatherForecast(){
             let weatherDiv = document.createElement('div');
             weatherDiv.classList.add('weather-container');
             weatherDiv.setAttribute('id', 'weather');
-
-            let weatherContent = document.createElement('div');
-            weatherContent.classList.add('weather-info');
-
-            let weatherHeader = document.createElement('h2');
-            weatherHeader.textContent = "Weather: "
-
-            let currTemp = data.list[0].main.temp;
-            let currHumidity = data.list[0].main.humidity;
-            let currWind = data.list[0].wind.speed;
-            let currDescription = data.list[0].weather[0].description;
-        })
+            let j = 5;
+            // for (let i = 0; i < 6; i++, j += 8) {
+            //     let card = document.createElement('div');
+            //     card.setAttribute('class', 'card');
+            //     let date = document.createElement('div');
+            //     date.textContent = moment().add(i, 'days').format('L');
+            //     let weatherIcon = document.createElement('img');
+            //     weatherIcon.setAttribute('src', 'https://openweathermap.org/img/wn/' + data.list[j].weather[0].icon + '@2x.png');
+            //     weatherIcon.setAttribute('alt', 'weatherIcon');
+            //     let temp = document.createElement('div');
+            //     temp.textContent =
+            //         'Temp: ' +
+            //         data.list[j].main.temp +
+            //         ' ' +
+            //         String.fromCharCode(176) +
+            //         'F';
+            //     let wind = document.createElement('div');
+            //     wind.textContent = 'Wind: ' + data.list[j].wind.speed + ' MPH';
+            //     let humidity = document.createElement('div');
+            //     humidity.textContent = 'Humidity: ' + data.list[j].main.humidity;
+        
+            //     card.appendChild(date);
+            //     card.appendChild(weatherIcon);
+            //     card.appendChild(temp);
+            //     card.appendChild(wind);
+            //     card.appendChild(humidity);
+            //     cards.appendChild(card);
+            //    weatherDiv.append(cards);
+            // }}
+        }
+       
+       
+        )
     })
 
     
     
 }
+
+// const displayCity = function (cityData, city) {
+// 	console.log(cityData, city);
+// 	if (city.length === 0) {
+// 		repoContainerEl.textContent = 'No content found.';
+// 		return;
+// 	}
+// 	let j = 5;
+// 	let child = cards.lastElementChild;
+// 	while (child) {
+// 		cards.removeChild(child);
+// 		child = cards.lastElementChild;
+// 	}
+
+// 	for (let i = 0; i < 6; i++, j += 8) {
+// 		let card = document.createElement('div');
+// 		card.setAttribute('class', 'card');
+// 		let date = document.createElement('div');
+// 		date.textContent = moment().add(i, 'days').format('L');
+// 		let weatherIcon = document.createElement('img');
+// 		weatherIcon.setAttribute('src', 'https://openweathermap.org/img/wn/' + cityData.list[j].weather[0].icon + '@2x.png');
+// 		weatherIcon.setAttribute('alt', 'weatherIcon');
+// 		let temp = document.createElement('div');
+// 		temp.textContent =
+// 			'Temp: ' +
+// 			cityData.list[j].main.temp +
+// 			' ' +
+// 			String.fromCharCode(176) +
+// 			'F';
+// 		let wind = document.createElement('div');
+// 		wind.textContent = 'Wind: ' + cityData.list[j].wind.speed + ' MPH';
+// 		let humidity = document.createElement('div');
+// 		humidity.textContent = 'Humidity: ' + cityData.list[j].main.humidity;
+
+// 		card.appendChild(date);
+// 		card.appendChild(weatherIcon);
+// 		card.appendChild(temp);
+// 		card.appendChild(wind);
+// 		card.appendChild(humidity);
+// 		cards.appendChild(card);
+// 	}}
