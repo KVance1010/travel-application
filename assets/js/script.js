@@ -12,7 +12,7 @@ const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
 const navItems = document.querySelector('.nav-link');
 
-// connection object
+// Connection object
 const options = {
 	method: 'GET',
 	headers: {
@@ -40,6 +40,7 @@ function currencyConverter(amount, landing) {
 	};
 }
 
+// Converts dollar into foreign currency
 function currencyEventHandler() {
 	const convertedCurrencyAmount = document.querySelector('#currencyInput');
 	convertedCurrencyAmount.addEventListener('keypress', (event) => {
@@ -51,12 +52,12 @@ function currencyEventHandler() {
 
 // Dynamically creates the facts portion of the webpage
 function genContent(data) {
-	// clears out any existing country information
+	// Clears out any existing country information
 	while (contentInfo.firstChild) {
 		contentInfo.firstChild.remove();
 	}
 
-	// clears out old currency information
+	// Clears out old currency information
 	currencyAmount.textContent = '';
 
 	// Main container
@@ -67,7 +68,7 @@ function genContent(data) {
 	let flagImg = document.createElement('img');
 	flagImg.setAttribute('src', data[0].flags.svg);
 
-	// container for the fact information
+	// Container for the fact information
 	let factContent = document.createElement('div');
 	factContent.classList.add('facts-container');
 
@@ -156,7 +157,7 @@ function genContent(data) {
 	currencyReturn.append(currencyInputContent);
 	currencyReturn.append(currencyAmount);
 
-	// append each element to the webpage
+	// Appends each element to the webpage
 	factContent.appendChild(factsHeader);
 	factContent.appendChild(divCapital);
 	factContent.appendChild(divPopulation);
