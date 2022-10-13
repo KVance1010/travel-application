@@ -2,41 +2,75 @@
 :root {
 	--backgroundColor: darkslategray;
 	--textColor: aliceblue;
+	/* --textColor:#b1bbca; */
 	--headerFooterColor: teal;
+	--contrastColor: #ddb64d;
+	--secondaryTextColor:#104061;
 }
 
 * {
 	padding: 0;
 	margin: 0;
 	font-family: 'Inter', sans-serif;
+	box-sizing: border-box;
 }
 
 /**** Navigation bar ****/
-nav {
-	color: var(--textColor);
+header {
 	background-color: var(--headerFooterColor);
 	height: 50px;
+	width: 100%;
+	position: fixed;
+	z-index: 3;
 }
-
-.nav-left {
-	position: relative;
-	left: 30px;
-	font-size: 30px;
-	top: 2px;
+.navbar {
+	min-height: 50px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 24px;
 }
-.nav-right {
-	float: right;
-	text-decoration: none;
-	padding-left: 16px;
-	position: relative;
-	right: 30px;
-	font-size: 30px;
-	top: 2px;
+.nav-brand {
 	color: var(--textColor);
+	text-decoration: none;
 }
-
-.nav-right:hover {
+.nav-brand::first-letter {
+	color: var(--contrastColor);
+	font-weight: 700;
+}
+/* TODO fix this so that it only selects the first letter */
+.nav-brand > span::first-letter {
+	color: var(--secondaryTextColor);
+	font-weight: bolder;
+}
+.nav-menu {
+	display: flex;
+}
+.nav-menu li {
+	list-style: none;
+	padding-right: 15px;
+}
+.nav-link {
+	color: var(--textColor);
+	text-decoration: none;
+	font-size: 2rem;
+	transition: 0.5s ease;
+}
+.nav-link:hover {
 	color: var(--backgroundColor);
+}
+.hamburger {
+	display: none;
+	cursor: pointer;
+}
+.bar {
+	display: block;
+	width: 25px;
+	height: 3px;
+	margin: 5px auto;
+	-webkit-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+	background-color: var(--textColor);
 }
 
 /**** Hero Section ****/
@@ -54,7 +88,7 @@ nav {
 .hero-content {
 	position: absolute;
 	display: flex;
-	height: 80%;
+	align-self: center;
 	margin-left: 30px;
 	font-weight: bolder;
 	flex-direction: column;
@@ -118,9 +152,6 @@ body {
 /**** Media queries ****/
 @media screen and (max-width: 1274px) {
 	/* Hero */
-	.hero-content {
-		height: 70%;
-	}
 	.hero-content h1 {
 		font-size: 70px;
 	}
@@ -131,9 +162,6 @@ body {
 
 @media screen and (max-width: 1074px) {
 	/* Hero */
-	.hero-content {
-		height: 50%;
-	}
 	.hero-content h1 {
 		font-size: 60px;
 		margin-bottom: 3rem;
@@ -163,13 +191,39 @@ body {
 }
 
 @media screen and (max-width: 830px) {
-	.nav-right {
-		font-size: 20px;
-		top: 8px;
+	/* Nav Bar */
+	.hamburger {
+		display: block;
 	}
-	.hero-content {
-		height: 40%;
+	.hamburger.active .bar:nth-child(2) {
+		opacity: 0;
 	}
+	.hamburger.active .bar:nth-child(1) {
+		transform: translateY(8px) rotate(45deg);
+	}
+	.hamburger.active .bar:nth-child(3) {
+		transform: translateY(-8px) rotate(-45deg);
+	}
+
+	.nav-menu {
+		position: fixed;
+		z-index: 3;
+		left: -100%;
+		top: 70px;
+		gap: 0;
+		flex-direction: column;
+		background-color: var(--headerFooterColor);
+		width: 100%;
+		text-align: center;
+		transition: 0.3s;
+	}
+	.nav-item {
+		margin: 16px 0;
+	}
+	.nav-menu.active {
+		left: 0;
+	}
+	/* Hero */
 	.hero-content h1 {
 		font-size: 50px;
 		margin-bottom: 3rem;
@@ -196,11 +250,8 @@ body {
 		font-size: medium;
 	}
 }
-@media screen and (max-width: 674px) {
+@media screen and (max-width: 720px) {
 	/* Hero */
-	.hero-content {
-		height: 35%;
-	}
 	.hero-content h1 {
 		font-size: 40px;
 		margin-bottom: 2rem;
@@ -210,24 +261,16 @@ body {
 		margin-bottom: 2rem;
 	}
 }
-@media screen and (max-width: 566px) {
-	/* Nav Bar */
-	.nav-left {
-		font-size: 25px;
-		top: 8px;
-	}
+@media screen and (max-width: 575px) {
 	/* Hero */
-	.hero-content {
-		height: 30%;
-	}
 	.hero-content h1 {
 		font-size: 30px;
-		margin-bottom: 2rem;
+		margin-bottom: 1rem;
 	}
 	.hero-content h3 {
 		font-size: 16px;
 		font-weight: 500;
-		margin-bottom: 2rem;
+		margin-bottom: 1rem;
 	}
 	/* Facts */
 	.info-container {
@@ -248,39 +291,13 @@ body {
 	}
 }
 
-/* TODO: turn the nav bar into a hamburger menu at 466 */
-@media screen and (max-width: 466px) {
-	/* Nav Bar */
-	nav {	
-		height: 40px;
-	}
-	.nav-left {
-		font-size: 20px;
-	}
+@media screen and (max-width: 499px) {
 	/* Hero */
-	.hero-content {
-		height: 25%;
-	}
-}
-
-@media screen and (max-width: 436px) {
-	/* Nav Bar */
-	nav {
-		height: 40px;
-	}
-	.nav-left {
-		font-size: 20px;
-	}
-	/* Hero */
-	.hero-content {
-		height: 22%;
-	}
 	.hero-content h1 {
+		margin-top: 40px;
 		font-size: 25px;
-		margin-bottom: 1rem;
 	}
 	.hero-content h3 {
 		font-size: 12px;
-		margin-bottom: 1rem;
 	}
 }

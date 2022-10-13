@@ -8,6 +8,9 @@ let capitalCity;
 let currencyAmount = document.createElement('span');
 const contentInfo = document.querySelector('#content');
 const searchResult = document.getElementById('search');
+const hamburger = document.querySelector('.hamburger');
+const navMenu = document.querySelector('.nav-menu');
+const navItems = document.querySelector('.nav-link');
 
 // connection object
 const options = {
@@ -254,4 +257,12 @@ searchResult.addEventListener('keypress', (event) => {
 });
 
 
-
+// burger menu items
+hamburger.addEventListener('click',() => {
+hamburger.classList.toggle("active");
+navMenu.classList.toggle("active");
+});
+navItems.forEach(n => n.addEventListener("click",() =>{
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
+}));
