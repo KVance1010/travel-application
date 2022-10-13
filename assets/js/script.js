@@ -157,6 +157,7 @@ function genContent(data) {
 	factsDiv.append(factContent);
 	contentInfo.append(factsDiv);
 	currencyEventHandler();
+	// weatherForecast();
 }
 
 function langContent(){
