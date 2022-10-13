@@ -8,12 +8,12 @@ $(function () {
 		return response.json();
 	})
 	.then(function (data) {
-    console.log(data)
+   
     for(i=0;i<250;i++){
     let titles = data[i].name.common
     countryArr.push(titles)
   }})
-console.log(countryArr)
+
 
   $('#search').autocomplete({
     source: countryArr,
