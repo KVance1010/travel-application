@@ -15,14 +15,21 @@ function weatherForecast(){
             return res.json();
         })
         .then(function(data){
+            langContent();
+            let weatherDiv = document.createElement('div');
+            weatherDiv.classList.add('weather-container');
+            weatherDiv.setAttribute('id', 'weather');
+
+            let weatherContent = document.createElement('div');
+            weatherContent.classList.add('weather-info');
+
+            let weatherHeader = document.createElement('h2');
+            weatherHeader.textContent = "Weather: "
+
             let currTemp = data.list[0].main.temp;
             let currHumidity = data.list[0].main.humidity;
             let currWind = data.list[0].wind.speed;
             let currDescription = data.list[0].weather[0].description;
-            console.log(currTemp);
-            console.log(currHumidity);
-            console.log(currWind);
-            console.log(currDescription);
         })
     })
 

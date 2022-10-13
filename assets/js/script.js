@@ -25,6 +25,12 @@ const options = {
 
 /************************  Functions  *********************************/
 
+// Displays the nav bar after a search is entered
+function displayNavBar() {
+	navMenu.style.display = 'flex';
+}
+
+// Converts dollar into foreign currency
 function currencyConverter(amount, landing) {
 	let requestURL = 'https://api.exchangerate.host/latest?base=USD';
 	let request = new XMLHttpRequest();
@@ -40,7 +46,7 @@ function currencyConverter(amount, landing) {
 	};
 }
 
-// Converts dollar into foreign currency
+// Event handler for search that was entered 
 function currencyEventHandler() {
 	const convertedCurrencyAmount = document.querySelector('#currencyInput');
 	convertedCurrencyAmount.addEventListener('keypress', (event) => {
@@ -170,16 +176,19 @@ function genContent(data) {
 	factsDiv.append(flagImg);
 	factsDiv.append(factContent);
 	contentInfo.append(factsDiv);
+
 	currencyEventHandler();
 	weatherForecast();
+	displayNavBar()
 }
 
 function langContent() {
 	//add div for translation parents
-	let factsDiv = document.createElement('div');
-	factsDiv.classList.add('info-container');
-	factsDiv.setAttribute('id', 'Translation');
+	let transDiv = document.createElement('div');
+	transDiv.classList.add('info-container');
+	transDiv.setAttribute('id', 'translation');
 	// div container
+	
 	// 2 children, one for translations and one for the map
 	// another div container for translations
 	// a parent div for each line we would like translated
@@ -215,7 +224,7 @@ function runSearch(name) {
 			let langArr = Object.values(langOb);
 			let langName = langArr[0];
 			langValue = languages[langName];
-			langContent();
+			
 		})
 		.catch((err) => console.error(err));
 }
@@ -226,17 +235,16 @@ function runSearch(name) {
 searchResult.addEventListener('keypress', (event) => {
 	if (event.key === 'Enter') {
 		runSearch(event.target.value);
+		addToSearchList(event.target.value);
 	}
 });
 
 // Burger menu items
 hamburger.addEventListener('click', () => {
-	hamburger.classList.toggle('active');
-	navMenu.classList.toggle('active');
-	// navItems.forEach((n) =>
-	// n.addEventListener('click', () => {
-	// 	hamburger.classList.remove('active');
-	// 	navMenu.classList.remove('active');
-	// })
-// );
+		hamburger.classList.toggle('active');
+		navMenu.classList.toggle('active');
 });
+// }else{
+// 	hamburger.classList.remove('active');
+// 	navMenu.classList.remove('active');
+// }
