@@ -1,6 +1,9 @@
 /************************  Global Variables / Selectors *********************************/
+let textVal;
+let type;
 let contentInfo = document.querySelector('#content');
 const searchResult = document.getElementById('search');
+
 
 // connection object
 const options = {
@@ -12,9 +15,22 @@ const options = {
 	},
 };
 
-let textVal = 'chicken';
-
 /************************  Functions  *********************************/
+
+function currencyConverter(){
+	var requestURL = 'https://api.exchangerate.host/latest?base=USD';
+var request = new XMLHttpRequest();
+request.open('GET', requestURL);
+request.responseType = 'json';
+request.send();
+
+request.onload = function() {
+  var response = request.response;
+  console.log(response)
+  let rate = response.rates[type]
+  console.log(rate)
+}
+}
 
 // Dynamically creates the facts portion of the webpage
 function genContent(data) {
@@ -82,6 +98,8 @@ function genContent(data) {
 	// Currency information
 	let currency = data[0].currencies;
 	let curArr = Object.values(currency);
+	type = Object.keys(currency);
+	currencyConverter(type);
 	let curValue = curArr[0];
 	let divCurrency = document.createElement('div');
 	divCurrency.setAttribute('class', 'info');
@@ -125,6 +143,7 @@ function runSearch(name) {
 			// 		console.log(data);
 			// 	})
 			// 	.catch(err => console.error(err));
+			
 		})
 		.catch((err) => console.error(err));
 }
