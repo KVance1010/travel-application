@@ -136,7 +136,8 @@ function genContent(data) {
 	currencyCon.setAttribute('class', 'info');
 	let currencyLabel = document.createElement('label');
 	currencyLabel.setAttribute('for', 'currencyInput');
-	currencyLabel.textContent = 'Enter dollar amount: ';
+	currencyLabel.setAttribute('class', 'fact-content');
+	currencyLabel.textContent = 'Enter dollar amount: $ ';
 	let currencyInput = document.createElement('input');
 	currencyInput.setAttribute('id', 'currencyInput');
 	currencyInput.setAttribute('type', 'text');
@@ -148,8 +149,10 @@ function genContent(data) {
 	currencyReturn.setAttribute('class', 'info');
 	let currencyInputContent = document.createElement('span');
 	currencyInputContent.setAttribute('class', 'returnCurrency');
+	currencyInputContent.setAttribute('class', 'fact-content');
 	currencyInputContent.textContent = 'Exchange Amount: ';
 	currencyAmount.setAttribute('class', 'amount');
+	currencyAmount.setAttribute('class', 'fact-content');
 	currencyReturn.append(currencyInputContent);
 	currencyReturn.append(currencyAmount);
 

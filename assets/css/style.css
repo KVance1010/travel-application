@@ -35,6 +35,7 @@ header {
 .nav-brand {
 	color: var(--textColor);
 	text-decoration: none;
+	font-size:2rem;
 }
 .nav-brand::first-letter {
 	color: var(--contrastColor);
@@ -54,7 +55,7 @@ header {
 .nav-link {
 	color: var(--textColor);
 	text-decoration: none;
-	font-size: 2rem;
+	font-size: 1.5rem;
 	transition: 0.5s ease;
 }
 .nav-link:hover {
@@ -138,6 +139,16 @@ header {
 }
 .fact-content {
 	font-size: large;
+}
+/* TODO: look up CSS feature for input box */
+#currencyInput{
+	background-color: var(--backgroundColor);
+	width: 60px;
+	color: var(--textColor);
+}
+.amount {
+	border: 2px solid black;
+	width:60px;
 }
 
 /**** Media queries ****/
