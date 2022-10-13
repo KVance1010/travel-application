@@ -1,9 +1,11 @@
 /************************  Global Variables / Selectors *********************************/
 let textVal;
+let rate;
 let type;
-let contentInfo = document.querySelector('#content');
+let converted;
+const contentInfo = document.querySelector('#content');
 const searchResult = document.getElementById('search');
-
+const cenvertedCurrencyAmount = document.querySelector('#currencyInput');
 
 // connection object
 const options = {
@@ -17,7 +19,7 @@ const options = {
 
 /************************  Functions  *********************************/
 
-function currencyConverter(){
+function currencyConverter(amount){
 	var requestURL = 'https://api.exchangerate.host/latest?base=USD';
 var request = new XMLHttpRequest();
 request.open('GET', requestURL);
@@ -26,10 +28,18 @@ request.send();
 
 request.onload = function() {
   var response = request.response;
-  console.log(response)
-  let rate = response.rates[type]
-  console.log(rate)
+  rate = response.rates[type]
+  converted = rate * amount
+  console.log(converted.toFixed(2))
 }
+}
+
+function currencyEventHandler(){
+	cenvertedCurrencyAmount.addEventListener('keypress', (event) => {
+		if (event.key === 'Enter') {
+			console.log(currencyConverter(event.target.value));	
+		}
+		});
 }
 
 // Dynamically creates the facts portion of the webpage
@@ -99,7 +109,6 @@ function genContent(data) {
 	let currency = data[0].currencies;
 	let curArr = Object.values(currency);
 	type = Object.keys(currency);
-	currencyConverter(type);
 	let curValue = curArr[0];
 	let divCurrency = document.createElement('div');
 	divCurrency.setAttribute('class', 'info');
@@ -112,12 +121,25 @@ function genContent(data) {
 	divCurrency.append(fact4);
 	divCurrency.append(fact4Content);
 
+	let currencyCon = document.createElement('div');
+	currencyCon.setAttribute('class', 'info');
+	let currencyLabel = document.createElement('label');
+	currencyLabel.setAttribute('for','currencyInput' );
+	currencyLabel.textContent = 'Enter dollar amount: ';
+	let currencyInput = document.createElement('input');
+	currencyInput.setAttribute('id', 'currencyInput');
+	currencyInput.setAttribute('type', 'text');
+	currencyCon.append(currencyLabel);
+	currencyCon.append(currencyInput);
+	
+
 	// // append each portion of facts and the flag to the webpage
 	factContent.appendChild(factsHeader);
 	factContent.appendChild(divCapital);
 	factContent.appendChild(divPopulation);
 	factContent.appendChild(divLanguage);
 	factContent.appendChild(divCurrency);
+	factContent.appendChild(currencyCon);
 	factsDiv.append(flagImg);
 	factsDiv.append(factContent);
 	contentInfo.append(factsDiv);
@@ -155,3 +177,6 @@ searchResult.addEventListener('keypress', (event) => {
 		runSearch(event.target.value);
 	}
 });
+
+
+
