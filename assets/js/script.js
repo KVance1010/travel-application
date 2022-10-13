@@ -4,6 +4,7 @@ let rate;
 let type;
 let langValue;
 let converted;
+let capitalCity;
 let currencyAmount = document.createElement('span');
 const contentInfo = document.querySelector('#content');
 const searchResult = document.getElementById('search');
@@ -52,6 +53,9 @@ function genContent(data) {
 		contentInfo.firstChild.remove();
 	}
 
+	// clears out old currency information
+	currencyAmount.textContent = '';
+
 	// Main container
 	let factsDiv = document.createElement('div');
 	factsDiv.classList.add('info-container');
@@ -76,6 +80,7 @@ function genContent(data) {
 	fact1.textContent = 'Capital City: ';
 	let fact1Content = document.createElement('span');
 	fact1Content.classList.add('fact-content');
+	capitalCity = data[0].capital[0];
 	fact1Content.textContent = data[0].capital[0];
 	divCapital.append(fact1);
 	divCapital.append(fact1Content);
@@ -133,14 +138,15 @@ function genContent(data) {
 	currencyInput.setAttribute('id', 'currencyInput');
 	currencyInput.setAttribute('type', 'text');
 	let currencyInputContent = document.createElement('span');
-	currencyInputContent.classList.add('returnCurrency');
+	currencyInputContent.setAttribute('class', 'returnCurrency');
 	currencyInputContent.textContent = 'Exchange Amount: ';
 	currencyAmount.setAttribute('class', 'amount');		
 	currencyCon.append(currencyLabel);
 	currencyCon.append(currencyInput);
+	currencyCon.append(currencyInputContent);
 	currencyCon.append(currencyAmount);
 
-	// // append each portion of facts and the flag to the webpage
+	// append each portion of facts and the flag to the webpage
 	factContent.appendChild(factsHeader);
 	factContent.appendChild(divCapital);
 	factContent.appendChild(divPopulation);
@@ -154,6 +160,13 @@ function genContent(data) {
 }
 
 function langContent(){
+//add div for translation parents
+
+// div container
+// 2 children, one for translations and one for the map
+// another div container for translations
+// a parent div for each line we would like translated 
+// span for english text and a span for the translation
 
 text1 = 'Hello'
 		// fetch('https://translated-mymemory---translation-memory.p.rapidapi.com/api/get?langpair=en%7C'+langValue+'&q='+text1+'&mt=1&onlyprivate=0&de=a%40b.c', options)
@@ -162,6 +175,8 @@ text1 = 'Hello'
 		// 		})
 		// 		.then(function (data) {
 		// 			console.log(data);
+		// 			let transText = data.responseData.translatedText;
+		// 			console.log(transText)
 		// 		})
 		// 		.catch(err => console.error(err));
 text2 = 'Thank you'
