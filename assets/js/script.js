@@ -169,7 +169,7 @@ function genContent(data) {
 	factsDiv.append(factContent);
 	contentInfo.append(factsDiv);
 	currencyEventHandler();
-	// weatherForecast();
+	weatherForecast();
 }
 
 function langContent() {
@@ -246,6 +246,7 @@ function runSearch(name) {
 			return response.json();
 		})
 		.then(function (data) {
+			console.log(data)
 			genContent(data);
 			let langOb = data[0].languages;
 			let langArr = Object.values(langOb);

@@ -140,15 +140,13 @@ header {
 .fact-content {
 	font-size: large;
 }
-/* TODO: look up CSS feature for input box */
 #currencyInput{
-	background-color: var(--backgroundColor);
-	width: 60px;
+	background-color: var(--headerFooterColor);
+	border-radius: 5px;
+	border-style: none;
+	outline: none;
+	width: 70px;
 	color: var(--textColor);
-}
-.amount {
-	border: 2px solid black;
-	width:60px;
 }
 
 /**** Media queries ****/
