@@ -11,7 +11,8 @@ const contentInfo = document.querySelector('#content');
 const searchResult = document.getElementById('search');
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
-const navItems = document.querySelector('.nav-link');
+const navItems = document.querySelectorAll('.nav-link');
+
 
 // Connection object
 const options = {
@@ -296,8 +297,9 @@ hamburger.addEventListener('click', () => {
 	navMenu.classList.toggle('active');
 });
 
-//TODO: Add a remove event listener for each element of the dropdown menu
-// }else{
-// 	hamburger.classList.remove('active');
-// 	navMenu.classList.remove('active');
-// }
+navItems.forEach((event) =>
+	event.addEventListener('click', () => {
+		hamburger.classList.remove('active');
+		navMenu.classList.remove('active');
+	})
+);
