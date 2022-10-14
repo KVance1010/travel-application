@@ -184,7 +184,7 @@ function genContent(data) {
 
 // Creates a map of the city and displays common sayings
 function langContent() {
-	let textTest = ['hello'];
+	// let textTest = ['hello'];
 	let translated = [
 		'Hello ',
 		'Thank you',
@@ -281,7 +281,7 @@ searchResult.addEventListener('keypress', (event) => {
 			runSearch(validate);
 			addToSearchList(validate);
 		} else {
-			alert();
+			alertModal();
 		}
 	}
 });

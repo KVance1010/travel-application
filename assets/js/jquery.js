@@ -1,6 +1,6 @@
 let nameInputEl = $('#search');
-let repeat = 1
-let countryArr = []
+let repeat = 1;
+let countryArr = [];
 
 // Autocomplete widget for searching a country
 $(function () {
@@ -9,11 +9,10 @@ $(function () {
 		return response.json();
 	})
 	.then(function (data) {
-   
-    for(i=0;i<250;i++){
-    let titles = data[i].name.common
-    countryArr.push(titles)
-  }})
+    for(let i=0; i<250; i++){
+    let titles = data[i].name.common;
+    countryArr.push(titles);
+  }});
 
   $('#search').autocomplete({
     source: countryArr,
@@ -21,6 +20,6 @@ $(function () {
 });
 
 // Dialog box if there is an Error
-function alert(){
-  $( "#dialog" ).dialog()
-}
+function alertModal(){
+  $( "#dialog" ).dialog();
+};
