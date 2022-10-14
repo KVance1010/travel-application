@@ -13,7 +13,6 @@ const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
 const navItems = document.querySelectorAll('.nav-link');
 
-
 // Connection object
 const options = {
 	method: 'GET',
@@ -187,7 +186,7 @@ function genContent(data) {
 function langContent() {
 	let textTest = ['hello'];
 	let translated = [
-		'Hello',
+		'Hello ',
 		'Thank you',
 		'Goodbye',
 		'How are you?',
@@ -213,44 +212,40 @@ function langContent() {
 	translationHeader.textContent = 'Common Translations: ';
 	translatedContent.append(translationHeader);
 
-	for (const element of textTest) {
-		let text1 = element;
-		// fetch('https://translated-mymemory---translation-memory.p.rapidapi.com/api/get?langpair=en%7C'+langValue+'&q='+text1+'&mt=1&onlyprivate=0&de=a%40b.c', options)
-		// 		.then(function (response) {
-		// 			return response.json();
-		// 		})
-		// 		.then(function (data) {
-		//			let transText = data.responseData.translatedText;
+	for (const element of translated) {
+	// 	let text1 = element;
+	// 	fetch(
+	// 		'https://translated-mymemory---translation-memory.p.rapidapi.com/api/get?langpair=en%7C' +
+	// 			langValue +
+	// 			'&q=' +
+	// 			text1 +
+	// 			'&mt=1&onlyprivate=0&de=a%40b.c',
+	// 		options
+	// 	)
+	// 		.then(function (response) {
+	// 			return response.json();
+	// 		})
+	// 		.then(function (data) {
+	// 			let transText = data.responseData.translatedText;
 
-		// let saying = document.createElement('div');
-		// saying.setAttribute('class', 'info');
-		// let originTextContent = document.createElement('span');
-		// originTextContent.classList.add('fact-titles');
-		// originTextContent.textContent =  text1;
-		// let newTextContent = document.createElement('span');
-		// newTextContent.classList.add('fact-content');
-		// newTextContent.textContent =  transText;
-		//saying.append(originTextContent);
-		//saying.append(newTextContent);
-		//translatedContent.append(saying);
+	// 			let saying = document.createElement('div');
+	// 			saying.setAttribute('class', 'info');
+	// 			let originTextContent = document.createElement('span');
+	// 			originTextContent.classList.add('fact-titles');
+	// 			originTextContent.textContent = text1;
+	// 			let newTextContent = document.createElement('span');
+	// 			newTextContent.classList.add('fact-content');
+	// 			newTextContent.textContent = transText;
+	// 			saying.append(originTextContent);
+	// 			saying.append(newTextContent);
+	// 			translatedContent.append(saying);
+	// 		})
+	// 		.catch((err) => console.error(err));
+	// }
 
-		// 			let originText = document.createElement('div')
-		// 			let newText = document.createElement('div')
-		// 			let originTextContent = document.createElement('span')
-		// 			let newTextContent = document.createElement('span')
-		// 			originTextContent.textContent = text1
-		// 			newTextContent.textContent = transText
-		// 			originText.append(originTextContent)
-		//          newText.append(newTextContent)
-		// 			.append(originText)
-		// 			translatedWords.append(newText)
-		// 		})
-		// 		.catch(err => console.error(err));
-	}
-
-	transDiv.append(translatedContent);
-	transDiv.append(mapImg);
-	contentInfo.append(transDiv);
+	// transDiv.append(translatedContent);
+	// transDiv.append(mapImg);
+	// contentInfo.append(transDiv);
 }
 
 // Connects to the server side APIs and collects information about the country and sets the language for the translator
