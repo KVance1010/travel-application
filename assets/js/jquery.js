@@ -22,4 +22,4 @@ $(function () {
 // Dialog box if there is an Error
 function alertModal(){
   $( "#dialog" ).dialog();
-};
+}
