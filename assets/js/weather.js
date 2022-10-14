@@ -8,6 +8,11 @@ const weatherForecast = function (city) {
 	const apiUrl = baseUrl + 'q=' + city + '&appid=' + apiKey;
 	const currentForecast = 'https://api.openweathermap.org/data/2.5/weather?';
 
+	let child = weatherDiv.lastElementChild;
+	while (child) {
+		weatherDiv.removeChild(child);
+		child = weatherDiv.lastElementChild;
+	}
 	fetch(apiUrl)
 		.then(function (response) {
 			if (response.ok) {
@@ -19,7 +24,7 @@ const weatherForecast = function (city) {
 						lat +
 						',' +
 						lon +
-						'&scale=2&size=900x150&zoom=11&key=AIzaSyBSokTJWEqsYy2vJP9SpktywdnyQXrFzuw';
+						'&scale=2&size=150x150&zoom=7&key=AIzaSyBSokTJWEqsYy2vJP9SpktywdnyQXrFzuw';
 					let lonLatURL =
 						'lat=' + lat + '&lon=' + lon + '&units=imperial&appid=' + apiKey;
 					fetch(currentForecast + lonLatURL).then(function (response) {
