@@ -109,8 +109,9 @@ header {
 .hero-content #search {
 	padding: 5px;
 	border-radius: 15px;
-	color: var(--textColor);
-	background-color: var(--backgroundColor);
+	color: var(--contrastColor);
+	font-weight: bold;
+	background-color: var(--secondaryTextColor);
 	text-align: center;
 	width: 40%;
 }
@@ -286,6 +287,7 @@ footer button {
 	.fact-content {
 		font-size: medium;
 	}
+	
 }
 @media screen and (max-width: 720px) {
 	/* Hero */
@@ -297,6 +299,7 @@ footer button {
 		font-size: 16px;
 		margin-bottom: 2rem;
 	}
+	
 }
 @media screen and (max-width: 575px) {
 	/* Hero */
@@ -326,6 +329,14 @@ footer button {
 		padding: 0;
 		text-align: center;
 	}
+	/* Weather */
+.weather {
+	justify-content: center;
+	flex-wrap: wrap;
+}
+.card{
+	min-width:150px;
+}
 }
 @media screen and (max-width: 499px) {
 	/* Hero */
