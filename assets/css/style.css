@@ -58,7 +58,8 @@ header {
 	transition: 0.5s ease;
 }
 .nav-link:hover {
-	color: var(--backgroundColor);
+	color: var(--contrastColor);
+	font-weight: bolder;
 }
 .hamburger {
 	display: none;
@@ -120,6 +121,7 @@ header {
 .info-container {
 	display: flex;
 	margin-top: 10px;
+	background-color: var(--secondaryTextColor);
 }
 .info-container img {
 	width: 50vw;
@@ -162,10 +164,11 @@ header {
 .card {
 	/* padding: 10px 5px; */
 	font-size: 16px;
-	border: solid 1px black;
-	background-color: rgb(36, 36, 58);
+	border: solid 5px var(--backgroundColor);
+	background-color: var(--secondaryTextColor);
 	color: white;
 	width: 19%;
+	padding: 10px;
 }
 .card div {
 	margin: 2px 0;
