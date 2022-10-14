@@ -213,7 +213,7 @@ function langContent() {
 	translatedContent.append(translationHeader);
 
 	for (const element of translated) {
-	// 	let text1 = element;
+		let text1 = element;
 	// 	fetch(
 	// 		'https://translated-mymemory---translation-memory.p.rapidapi.com/api/get?langpair=en%7C' +
 	// 			langValue +
@@ -241,11 +241,11 @@ function langContent() {
 	// 			translatedContent.append(saying);
 	// 		})
 	// 		.catch((err) => console.error(err));
-	// }
+	}
 
-	// transDiv.append(translatedContent);
-	// transDiv.append(mapImg);
-	// contentInfo.append(transDiv);
+	transDiv.append(translatedContent);
+	transDiv.append(mapImg);
+	contentInfo.append(transDiv);
 }
 
 // Connects to the server side APIs and collects information about the country and sets the language for the translator
