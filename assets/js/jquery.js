@@ -20,7 +20,7 @@ $(function () {
   });
 });
 
-// Dialog box
+// Dialog box if there is an Error
 function alert(){
   $( "#dialog" ).dialog()
 }

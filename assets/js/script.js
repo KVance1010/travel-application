@@ -28,7 +28,6 @@ const options = {
 // Displays the nav bar after a search is entered
 function displayNavBar() {
 	navMenu.style.display = 'flex';
-	hamburger.style.display = 'block';	
 }
 
 // Converts dollar into foreign currency
@@ -47,7 +46,7 @@ function currencyConverter(amount, landing) {
 	};
 }
 
-// Event handler for search that was entered 
+// Event handler for search that was entered
 function currencyEventHandler() {
 	const convertedCurrencyAmount = document.querySelector('#currencyInput');
 	convertedCurrencyAmount.addEventListener('keypress', (event) => {
@@ -129,7 +128,7 @@ function genContent(data) {
 	let curArr = Object.values(currency);
 	type = Object.keys(currency);
 	let curValue = curArr[0];
-	currencyName =  curValue.name;
+	currencyName = curValue.name;
 	let divCurrency = document.createElement('div');
 	divCurrency.setAttribute('class', 'info');
 	let fact4 = document.createElement('span');
@@ -180,54 +179,76 @@ function genContent(data) {
 
 	currencyEventHandler();
 	weatherForecast(capitalCity);
-	displayNavBar()
+	displayNavBar();
 }
 
+// Creates a map of the city and displays common sayings
 function langContent() {
-	console.log(backImg)
+	let textTest = ['hello'];
+	let translated = [
+		'Hello',
+		'Thank you',
+		'Goodbye',
+		'How are you?',
+		'Where is the bathroom?',
+		'My name is,',
+	];
 
-	
-	//add div for translation parents
+	// Translation Main Container
 	let transDiv = document.createElement('div');
 	transDiv.classList.add('info-container');
 	transDiv.setAttribute('id', 'translation');
-	// div container
-	
-	// 2 children, one for translations and one for the map
+
+	// Container for the Common Translations
+	let translatedContent = document.createElement('div');
+	translatedContent.classList.add('translated-container', 'facts-container');
+
+	// Generates a map of the city
 	let mapImg = document.createElement('img');
 	mapImg.setAttribute('src', backImg);
-	let translatedWords = document.createElement('div')
 
-	// another div container for translations
-	// a parent div for each line we would like translated
-	// span for english text and a span for the translation
-	let textTest = ['hello'];
- 	let translated = ['Hello','Thank you','Goodbye','How are you?','Where is the bathroom?','My name is,']
-	for(i=0;i<textTest.length;i++){
-		let text1 = textTest[i]
-	// fetch('https://translated-mymemory---translation-memory.p.rapidapi.com/api/get?langpair=en%7C'+langValue+'&q='+text1+'&mt=1&onlyprivate=0&de=a%40b.c', options)
-	// 		.then(function (response) {
-	// 			return response.json();
-	// 		})
-	// 		.then(function (data) {
-	//			let transText = data.responseData.translatedText;
+	//Header for Translations Section
+	let translationHeader = document.createElement('h2');
+	translationHeader.textContent = 'Common Translations: ';
+	translatedContent.append(translationHeader);
 
-	// 			let originText = document.createElement('div')
-	// 			let newText = document.createElement('div')
-	// 			let originTextContent = document.createElement('span')
-	// 			let newTextContent = document.createElement('span')
-	// 			
-	// 			originTextContent.textContent = text1
-	// 			newTextContent.textContent = transText
-	// 			originText.append(originTextContent)
-	//          newText.append(newTextContent)
-	// 			translatedWords.append(originText)
-	// 			translatedWords.append(newText)	
-	// 		})
-	// 		.catch(err => console.error(err));
+	for (const element of textTest) {
+		let text1 = element;
+		// fetch('https://translated-mymemory---translation-memory.p.rapidapi.com/api/get?langpair=en%7C'+langValue+'&q='+text1+'&mt=1&onlyprivate=0&de=a%40b.c', options)
+		// 		.then(function (response) {
+		// 			return response.json();
+		// 		})
+		// 		.then(function (data) {
+		//			let transText = data.responseData.translatedText;
+
+		// let saying = document.createElement('div');
+		// saying.setAttribute('class', 'info');
+		// let originTextContent = document.createElement('span');
+		// originTextContent.classList.add('fact-titles');
+		// originTextContent.textContent =  text1;
+		// let newTextContent = document.createElement('span');
+		// newTextContent.classList.add('fact-content');
+		// newTextContent.textContent =  transText;
+		//saying.append(originTextContent);
+		//saying.append(newTextContent);
+		//translatedContent.append(saying);
+
+		// 			let originText = document.createElement('div')
+		// 			let newText = document.createElement('div')
+		// 			let originTextContent = document.createElement('span')
+		// 			let newTextContent = document.createElement('span')
+		// 			originTextContent.textContent = text1
+		// 			newTextContent.textContent = transText
+		// 			originText.append(originTextContent)
+		//          newText.append(newTextContent)
+		// 			.append(originText)
+		// 			translatedWords.append(newText)
+		// 		})
+		// 		.catch(err => console.error(err));
 	}
-	transDiv.append(translatedWords)
-	transDiv.append(mapImg)
+
+	transDiv.append(translatedContent);
+	transDiv.append(mapImg);
 	contentInfo.append(transDiv);
 }
 
@@ -238,13 +259,12 @@ function runSearch(name) {
 			return response.json();
 		})
 		.then(function (data) {
-			console.log(data)
+			console.log(data);
 			genContent(data);
 			let langOb = data[0].languages;
 			let langArr = Object.values(langOb);
 			let langName = langArr[0];
 			langValue = languages[langName];
-			
 		})
 		.catch((err) => console.error(err));
 }
@@ -256,25 +276,27 @@ searchResult.addEventListener('keypress', (event) => {
 	if (event.key === 'Enter') {
 		let validate = event.target.value;
 		let onList = 0;
-		for(i=0;i<countryArr.length;i++){
-			if(validate === countryArr[i]){
+		for (i = 0; i < countryArr.length; i++) {
+			if (validate === countryArr[i]) {
 				onList = 1;
 			}
 		}
-		if(onList === 1){
-		runSearch(validate);
-		addToSearchList(validate);
-		}else{
-			alert()
+		if (onList === 1) {
+			runSearch(validate);
+			addToSearchList(validate);
+		} else {
+			alert();
 		}
-}
+	}
 });
 
 // Burger menu items
 hamburger.addEventListener('click', () => {
-		hamburger.classList.toggle('active');
-		navMenu.classList.toggle('active');
+	hamburger.classList.toggle('active');
+	navMenu.classList.toggle('active');
 });
+
+//TODO: Add a remove event listener for each element of the dropdown menu
 // }else{
 // 	hamburger.classList.remove('active');
 // 	navMenu.classList.remove('active');

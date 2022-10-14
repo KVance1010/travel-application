@@ -4,7 +4,7 @@
 	--textColor: aliceblue;
 	--headerFooterColor: teal;
 	--contrastColor: #ddb64d;
-	--secondaryTextColor:#104061;
+	--secondaryTextColor: #104061;
 }
 * {
 	padding: 0;
@@ -34,13 +34,13 @@ header {
 .nav-brand {
 	color: var(--textColor);
 	text-decoration: none;
-	font-size:2rem;
+	font-size: 2rem;
 }
 .nav-brand::first-letter {
 	color: var(--contrastColor);
 	font-weight: 700;
 }
-.nav-brand > span{
+.nav-brand > span {
 	color: var(--contrastColor);
 	font-weight: bolder;
 }
@@ -109,15 +109,17 @@ header {
 .hero-content #search {
 	padding: 5px;
 	border-radius: 15px;
-	color: var(--textColor);
-	background-color: var(--backgroundColor);
+	color: var(--contrastColor);
+	font-weight: bold;
+	background-color: var(--secondaryTextColor);
 	text-align: center;
 	width: 40%;
 }
 
-/**** Facts Content ****/
+/**** Facts Content / Map and Common Sayings ****/
 .info-container {
 	display: flex;
+	margin-top: 10px;
 }
 .info-container img {
 	width: 50vw;
@@ -139,7 +141,7 @@ header {
 .fact-content {
 	font-size: large;
 }
-#currencyInput{
+#currencyInput {
 	background-color: var(--headerFooterColor);
 	border-radius: 5px;
 	border-style: none;
@@ -147,8 +149,44 @@ header {
 	width: 70px;
 	color: var(--textColor);
 }
-.footer {
+.translated-container {
+	width: 50vw;
+}
+
+/**** Weather Forecast ****/
+.weather {
+	display: flex;
+	margin-top: 10px;
+}
+
+.card {
+	/* padding: 10px 5px; */
+	font-size: 16px;
+	border: solid 1px black;
+	background-color: rgb(36, 36, 58);
+	color: white;
+	width: 19%;
+}
+.card div {
+	margin: 2px 0;
+}
+
+/**** footer City list ****/
+footer {
+	margin-top: 10px;
+	height: 40px;
+	display: flex;
+	justify-content: flex-start;
 	background-color: var(--headerFooterColor);
+}
+footer button {
+	background-color: var(--secondaryTextColor);
+	color: var(--contrastColor);
+	font-weight: bolder;
+	border-style: none;
+	margin: 5px 0 5px 30px;
+	border-radius: 8px;
+	padding: 5px;
 }
 
 /**** Media queries ****/
@@ -193,7 +231,7 @@ header {
 @media screen and (max-width: 830px) {
 	/* Nav Bar */
 	.hamburger {
-		display: none;
+		display: block;
 	}
 	.hamburger.active .bar:nth-child(2) {
 		opacity: 0;
@@ -249,6 +287,7 @@ header {
 	.fact-content {
 		font-size: medium;
 	}
+	
 }
 @media screen and (max-width: 720px) {
 	/* Hero */
@@ -260,6 +299,7 @@ header {
 		font-size: 16px;
 		margin-bottom: 2rem;
 	}
+	
 }
 @media screen and (max-width: 575px) {
 	/* Hero */
@@ -289,6 +329,14 @@ header {
 		padding: 0;
 		text-align: center;
 	}
+	/* Weather */
+.weather {
+	justify-content: center;
+	flex-wrap: wrap;
+}
+.card{
+	min-width:150px;
+}
 }
 @media screen and (max-width: 499px) {
 	/* Hero */

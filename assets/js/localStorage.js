@@ -1,4 +1,4 @@
-// Adds 
+// Creates buttons based off the localStorage
 function popContent(){
     let popBtn = JSON.parse(localStorage.getItem("countrySave")) || []
     if(popBtn.length!=0){
@@ -11,12 +11,12 @@ function popContent(){
     }
 }
 
-popContent()
-
+// Clears out the saved city buttons
 function deleteContent(){
     $('#custom-btn').empty()
 }
 
+// Saves searched cities to local storage
 function addToSearchList(event){
     if(!event){
 // TODO: need to add an alert of some sort *********************************           
@@ -39,8 +39,12 @@ function addToSearchList(event){
         }
     }
 }
-           
+
+// Event Listener for the saved cities that are listed
 $("#custom-btn").on("click", (event) => {
     let city = $(event.target).attr('id')
     runSearch(city)
 });
+
+// Calls the create button when the file is loaded
+popContent()
