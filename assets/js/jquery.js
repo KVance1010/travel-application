@@ -27,11 +27,9 @@ fetch(timezone)
   })
 	.then(function(dateDetails){
 		let zones = dateDetails.zones;
-		console.log(codeCountry);
 		for(let i = 0; i < 424; i++){
       zonesArr.push(zones[i].zoneName)
 		}
-    console.log(zonesArr)
 	})
   fetch(timezone)
   .then(function (res){
@@ -39,11 +37,9 @@ fetch(timezone)
   })
 	.then(function(dateDetails){
 		let zones = dateDetails.zones;
-		console.log(codeCountry);
 		for(let i = 0; i < 424; i++){
       codesArr.push(zones[i].countryCode)
 		}
-    console.log(codesArr)
 	})
 
 // Dialog box if there is an Error
@@ -53,3 +49,4 @@ function alertModal(){
 function alertModal2(){
   $( "#dialog2" ).dialog();
 }
+

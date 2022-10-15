@@ -1,6 +1,6 @@
 let backImg;
-let zoneIndex;
 let DateTime = luxon.DateTime.local();
+let zoneIndex;
 const weatherDiv = document.querySelector('.weather');
 
 // fetch the weather url

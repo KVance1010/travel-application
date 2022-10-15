@@ -258,7 +258,7 @@ footer button {
 		top: 60px;
 		flex-direction: column;
 		background-color: var(--headerFooterColor);
-		width: 20%;
+		/* width: 20%; */
 		border-radius: 10px;
 		text-align: center;
 		transition: 0.3s;
@@ -268,6 +268,8 @@ footer button {
     }
 	.nav-menu.active {
 		right: 10px;
+        text-align: left;
+        margin: 0 5px 0 0;
 	}
 	/* Hero */
 	.hero-content h1 {
