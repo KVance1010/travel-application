@@ -6,19 +6,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
         rel="stylesheet">
+    <!-- Live server error fix -->
     <link rel="icon" href="#" />
+    <!-- Ulkit CSS Framework -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.15.10/dist/css/uikit.min.css" />
+     <!-- JQuery -->
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
+     <!-- Internal CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+     <!-- Internal JS language file -->
     <script src="./assets/js/languages.js"></script>
+    <!-- JQuery JS -->
+    <script defer src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script defer src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <script defer src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script defer src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <!-- Moment.js -->
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
+    <!-- Luxon.js -->
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/luxon/3.0.4/luxon.min.js"></script>
+    <!-- Ulkit JS Framework-->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.10/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.10/dist/js/uikit-icons.min.js"></script>
+     <!-- Internal JS -->
     <script defer src="./assets/js/jquery.js"></script>
     <script defer src="./assets/js/index.js"></script>
     <script defer src="./assets/js/weather.js"></script>
@@ -28,7 +43,7 @@
 
 <body>
     <header>
-        <nav class="navbar">
+        <nav class="navbar uk-flex">
             <a href="#home" class="nav-brand">Oui<span>T</span>ravel</a>
             <ul class="nav-menu">
                 <li class="nav-item">
@@ -47,25 +62,27 @@
                 <span class="bar"></span>
             </div>
         </nav>
-      
+
     </header>
-    <div class="hero-section" id="home">
-        <img src="./assets/images/hero.jpg" class="hero-image" alt="background image of a guy on a lake looking at snow capped mountains">
-        <div class="hero-content">
+    <div class="hero-section uk-flex" id="home">
+        <img src="./assets/images/hero.jpg" class="hero-image"
+            alt="background image of a guy on a lake looking at snow capped mountains">
+        <div class="hero-content uk-flex">
             <h1>Travel In Every Language</h1>
             <h3>Search for your next destination</h3>
             <input type="text" id="search" placeholder="Country">
         </div>
     </div>
     <main id="content">
-        
+
     </main>
-    <div class="weather"></div>
-    <div id="dialog" style= "display: none" title="Sorry">
+    <div class="weather uk-flex uk-flex-center"></div>
+    <div id="dialog" style="display: none" title="Sorry">
         <p>This is not a Country that we offer at this time, Please select another Country</p>
     </div>
     <footer id="custom-btn">
 
+    </footer>
     </footer>
 </body>
 

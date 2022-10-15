@@ -15,7 +15,6 @@
 body {
 	background-color: var(--backgroundColor);
 }
-
 /**** Navigation bar ****/
 header {
 	background-color: var(--headerFooterColor);
@@ -26,15 +25,17 @@ header {
 }
 .navbar {
 	min-height: 50px;
-	display: flex;
 	justify-content: space-between;
-	align-items: center;
 	padding: 0 24px;
 }
 .nav-brand {
 	color: var(--textColor);
 	text-decoration: none;
 	font-size: 2rem;
+}
+.nav-brand:hover {
+	text-decoration: none;
+	color: var(--contrastColor);
 }
 .nav-brand::first-letter {
 	color: var(--contrastColor);
@@ -46,6 +47,7 @@ header {
 }
 .nav-menu {
 	display: none;
+	margin-top: 6px;
 }
 .nav-menu li {
 	list-style: none;
@@ -77,7 +79,6 @@ header {
 
 /**** Hero Section ****/
 .hero-section {
-	display: flex;
 	width: 100%;
 }
 .hero-image {
@@ -87,7 +88,6 @@ header {
 }
 .hero-content {
 	position: absolute;
-	display: flex;
 	align-self: center;
 	margin-left: 30px;
 	font-weight: bolder;
@@ -99,10 +99,12 @@ header {
 	width: 50%;
 }
 .hero-content h1 {
+	color: var(--textColor);
 	font-size: 90px;
 	margin-bottom: 5rem;
 }
 .hero-content h3 {
+	color: var(--textColor);
 	width: 50%;
 	font-size: 40px;
 	margin-bottom: 5rem;
@@ -131,6 +133,7 @@ header {
 	color: var(--textColor);
 }
 .facts-container h2 {
+	color: var(--textColor);
 	font-size: xxx-large;
 }
 .facts-container div {
@@ -157,21 +160,12 @@ header {
 
 /**** Weather Forecast ****/
 .weather {
-	display: flex;
 	margin-top: 10px;
 }
-
 .card {
-	/* padding: 10px 5px; */
-	font-size: 16px;
 	border: solid 5px var(--backgroundColor);
 	background-color: var(--secondaryTextColor);
 	color: white;
-	width: 19%;
-	padding: 10px;
-}
-.card div {
-	margin: 2px 0;
 }
 
 /**** footer City list ****/
@@ -290,9 +284,15 @@ footer button {
 	.fact-content {
 		font-size: medium;
 	}
-	
+	/* Weather */
+	.weather {
+		flex-wrap: wrap;
+	}
+	.card {
+		min-width: 160px;
+	}
 }
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 735px) {
 	/* Hero */
 	.hero-content h1 {
 		font-size: 40px;
@@ -302,7 +302,6 @@ footer button {
 		font-size: 16px;
 		margin-bottom: 2rem;
 	}
-	
 }
 @media screen and (max-width: 575px) {
 	/* Hero */
@@ -332,14 +331,6 @@ footer button {
 		padding: 0;
 		text-align: center;
 	}
-	/* Weather */
-.weather {
-	justify-content: center;
-	flex-wrap: wrap;
-}
-.card{
-	min-width:150px;
-}
 }
 @media screen and (max-width: 499px) {
 	/* Hero */

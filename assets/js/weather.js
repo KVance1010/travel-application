@@ -1,4 +1,5 @@
 let backImg;
+let DateTime = luxon.DateTime.local();
 const weatherDiv = document.querySelector('.weather');
 
 // fetch the weather url
@@ -32,9 +33,10 @@ const weatherForecast = function (city) {
                             langContent();
 							response.json().then(function (cityData) {
 								let card = document.createElement('div');
-								card.setAttribute('class', 'card');
+								card.setAttribute('class', 'card uk-card uk-card-default uk-card-body');
 								let date = document.createElement('div');
-								date.textContent = moment().add(0, 'days').format('L');
+								//date.textContent = moment().add(0, 'days').format('L');
+								date.textContent = DateTime.toLocaleString();
 								let weatherIcon = document.createElement('img');
 								weatherIcon.setAttribute(
 									'src',
@@ -92,9 +94,10 @@ const displayDaysTwoToSix = function (cityData) {
 	let j = 5;
 	for (let i = 1; i < 6; i++, j += 8) {
 		let card = document.createElement('div');
-		card.setAttribute('class', 'card');
+		card.setAttribute('class', 'card uk-card uk-card-default uk-card-body uk-margin-left');
 		let date = document.createElement('div');
-		date.textContent = moment().add(i, 'days').format('L');
+		//date.textContent = moment().add(i, 'days').format('L');
+		date.textContent = DateTime.plus({days: i}).toLocaleString();
 		let weatherIcon = document.createElement('img');
 		weatherIcon.setAttribute(
 			'src',
