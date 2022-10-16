@@ -19,7 +19,7 @@ function deleteContent(){
 // Saves searched cities to local storage
 function addToSearchList(event){
     if(!event){
-// TODO: need to add an alert of some sort *********************************           
+         
     }else{
         let countryArr = JSON.parse(localStorage.getItem("countrySave")) || []
         let repeat = 1 ;
