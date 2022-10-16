@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+   
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,6 +19,8 @@
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
     <!-- Internal CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <!--Splide JS-->
+    <script src="./assets/js/splide.min.js"></script>
     <!-- Internal JS language file -->
     <script src="./assets/js/languages.js"></script>
     <!-- JQuery JS -->
@@ -36,7 +38,7 @@
     <script defer src="./assets/js/index.js"></script>
     <script defer src="./assets/js/weather.js"></script>
     <script defer src="./assets/js/localStorage.js"></script>
-    <script defer src="./assets/js/googleApi.js"></script>
+    <script defer src="./assets/js/extraApi.js"></script>
     <title>Travel Application</title>
 </head>
 
@@ -72,6 +74,7 @@
                 <input type="text" id="search" placeholder="Country">
             </div>
         </div>
+        <div class="slider"></div>
         <div id="content"></div>
         <div class="weather uk-flex"></div>
     </main>

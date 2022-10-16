@@ -15,7 +15,8 @@ const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
 const navItems = document.querySelectorAll('.nav-link');
 const footerDate = document.querySelector('#date');
-// const hero = document.querySelector('.hero-section');
+const hero = document.querySelector('.hero-section');
+const slider = document.querySelector('.slider');
 
 // Connection object
 const options = {
@@ -32,8 +33,16 @@ const options = {
 // Displays the nav bar after a search is entered
 function displayNavBar() {
 	navMenu.style.display = 'flex';
-	// hero.style.display = 'none';
+	hero.style.display = 'none';
+	slider.style.display = 'block';
 }
+
+// Hide 
+function showHome() {
+	hero.style.display = 'none';
+	slider.style.display = 'none';
+}
+
 
 // Converts dollar into foreign currency
 function currencyConverter(amount, landing) {
