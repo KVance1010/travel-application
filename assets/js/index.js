@@ -245,32 +245,32 @@ function langContent() {
 			saying.append(newTextContent);
 			translatedContent.append(saying);
 		} else {
-			fetch(
-				'https://translated-mymemory---translation-memory.p.rapidapi.com/api/get?langpair=en%7C' +
-					langValue +
-					'&q=' +
-					text1 +
-					'&mt=1&onlyprivate=0&de=a%40b.c',
-				options
-			)
-				.then(function (response) {
-					return response.json();
-				})
-				.then(function (data) {
-					let transText = data.responseData.translatedText;
-					let saying = document.createElement('div');
-					saying.classList.add('info', "uk-grid");
-					let originTextContent = document.createElement('span');
-					originTextContent.classList.add('titles',  "uk-width-1-2");
-					originTextContent.textContent = text1 + ": " ;
-					let newTextContent = document.createElement('span');
-					newTextContent.classList.add('content',  "uk-width-1-2");
-					newTextContent.textContent = transText;
-					saying.append(originTextContent);
-					saying.append(newTextContent);
-					translatedContent.append(saying);
-				})
-				.catch((err) => console.error(err));
+			// fetch(
+			// 	'https://translated-mymemory---translation-memory.p.rapidapi.com/api/get?langpair=en%7C' +
+			// 		langValue +
+			// 		'&q=' +
+			// 		text1 +
+			// 		'&mt=1&onlyprivate=0&de=a%40b.c',
+			// 	options
+			// )
+			// 	.then(function (response) {
+			// 		return response.json();
+			// 	})
+			// 	.then(function (data) {
+			// 		let transText = data.responseData.translatedText;
+			// 		let saying = document.createElement('div');
+			// 		saying.classList.add('info', "uk-grid");
+			// 		let originTextContent = document.createElement('span');
+			// 		originTextContent.classList.add('titles',  "uk-width-1-2");
+			// 		originTextContent.textContent = text1 + ": " ;
+			// 		let newTextContent = document.createElement('span');
+			// 		newTextContent.classList.add('content',  "uk-width-1-2");
+			// 		newTextContent.textContent = transText;
+			// 		saying.append(originTextContent);
+			// 		saying.append(newTextContent);
+			// 		translatedContent.append(saying);
+			// 	})
+			// 	.catch((err) => console.error(err));
 		}
 	}
 
@@ -312,6 +312,7 @@ searchResult.addEventListener('keypress', (event) => {
 		if (onList === 1) {
 			countryName = validate;
 			runSearch(validate);
+			cityImages(validate);
 			addToSearchList(validate);
 		} else {
 			alertModal();
