@@ -1,6 +1,4 @@
 /************************  Global Variables / Selectors *********************************/
-
-// new Splide( '.splide' ).mount();
 let textVal;
 let rate;
 let type;
@@ -18,7 +16,7 @@ const navMenu = document.querySelector('.nav-menu');
 const navItems = document.querySelectorAll('.nav-link');
 const footerDate = document.querySelector('#date');
 const hero = document.querySelector('.hero-section');
-const slider = document.querySelector('.splide');
+const slide = document.querySelector('.slide');
 
 // Connection object
 const options = {
@@ -36,13 +34,13 @@ const options = {
 function displayNavBar() {
 	navMenu.style.display = 'flex';
 	hero.style.display = 'none';
-	// slider.style.display = 'block';
+	slide.style.display = 'block';
 }
 
 // Hide 
 function showHome() {
 	hero.style.display = 'none';
-	// slider.style.display = 'none';
+	slide.style.display = 'block';
 }
 
 
@@ -293,6 +291,7 @@ function langContent() {
 
 // Connects to the server side APIs and collects information about the country and sets the language for the translator
 function runSearch(name) {
+	cityImages(name);
 	fetch('https://restcountries.com/v3.1/name/' + name)
 		.then(function (response) {
 			return response.json();
@@ -324,7 +323,6 @@ searchResult.addEventListener('keypress', (event) => {
 		if (onList === 1) {
 			countryName = validate;
 			runSearch(validate);
-			cityImages(validate);
 			addToSearchList(validate);
 		} else {
 			alertModal();
