@@ -40,6 +40,7 @@ function currencyConverter(amount, landing) {
 
 	request.onload = function () {
 		let response = request.response;
+		console.log(response)
 		rate = response.rates[type];
 		converted = rate * amount;
 		currencyAmount.textContent = converted.toFixed(2) + ' ' + currencyName;
@@ -214,33 +215,34 @@ function langContent() {
 
 	for (const element of translated) {
 		let text1 = element;
-	// 	fetch(
-	// 		'https://translated-mymemory---translation-memory.p.rapidapi.com/api/get?langpair=en%7C' +
-	// 			langValue +
-	// 			'&q=' +
-	// 			text1 +
-	// 			'&mt=1&onlyprivate=0&de=a%40b.c',
-	// 		options
-	// 	)
-	// 		.then(function (response) {
-	// 			return response.json();
-	// 		})
-	// 		.then(function (data) {
-	// 			let transText = data.responseData.translatedText;
+		// fetch(
+		// 	'https://translated-mymemory---translation-memory.p.rapidapi.com/api/get?langpair=en%7C' +
+		// 		langValue +
+		// 		'&q=' +
+		// 		text1 +
+		// 		'&mt=1&onlyprivate=0&de=a%40b.c',
+		// 	options
+		// )
+		// 	.then(function (response) {
+		// 		return response.json();
+		// 	})
+		// 	.then(function (data) {
+		// 		console.log(data)
+		// 		let transText = data.responseData.translatedText;
 
-	// 			let saying = document.createElement('div');
-	// 			saying.setAttribute('class', 'info');
-	// 			let originTextContent = document.createElement('span');
-	// 			originTextContent.classList.add('fact-titles');
-	// 			originTextContent.textContent = text1;
-	// 			let newTextContent = document.createElement('span');
-	// 			newTextContent.classList.add('fact-content');
-	// 			newTextContent.textContent = transText;
-	// 			saying.append(originTextContent);
-	// 			saying.append(newTextContent);
-	// 			translatedContent.append(saying);
-	// 		})
-	// 		.catch((err) => console.error(err));
+		// 		let saying = document.createElement('div');
+		// 		saying.setAttribute('class', 'info');
+		// 		let originTextContent = document.createElement('span');
+		// 		originTextContent.classList.add('fact-titles');
+		// 		originTextContent.textContent = text1;
+		// 		let newTextContent = document.createElement('span');
+		// 		newTextContent.classList.add('fact-content');
+		// 		newTextContent.textContent = transText;
+		// 		saying.append(originTextContent);
+		// 		saying.append(newTextContent);
+		// 		translatedContent.append(saying);
+		// 	})
+		// 	.catch((err) => console.error(err));
 	}
 
 	transDiv.append(translatedContent);

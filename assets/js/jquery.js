@@ -22,5 +22,5 @@ $(function () {
 
 // Dialog box if there is an Error
 function alert(){
-  $( "#dialog" ).dialog()
+  $( "#dialog" ).popModal({})
 }
