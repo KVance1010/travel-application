@@ -15,7 +15,7 @@ const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
 const navItems = document.querySelectorAll('.nav-link');
 const footerDate = document.querySelector('#date');
-// const hero = document.querySelector('.hero-section');
+const hero = document.querySelector('.hero-section');
 
 // Connection object
 const options = {
@@ -45,6 +45,7 @@ function currencyConverter(amount, landing) {
 
 	request.onload = function () {
 		let response = request.response;
+		console.log(response)
 		rate = response.rates[type];
 		converted = rate * amount;
 		currencyAmount.textContent = converted.toFixed(2) + ' ' + currencyName;
@@ -281,6 +282,7 @@ function langContent() {
 
 // Connects to the server side APIs and collects information about the country and sets the language for the translator
 function runSearch(name) {
+	cityImages(name);
 	fetch('https://restcountries.com/v3.1/name/' + name)
 		.then(function (response) {
 			return response.json();
@@ -312,7 +314,6 @@ searchResult.addEventListener('keypress', (event) => {
 		if (onList === 1) {
 			countryName = validate;
 			runSearch(validate);
-			cityImages(validate);
 			addToSearchList(validate);
 		} else {
 			alertModal();

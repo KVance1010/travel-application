@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+   
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,12 +14,15 @@
     <link rel="icon" href="#" />
     <!-- UIkit CSS Framework -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.15.10/dist/css/uikit.min.css" />
-    <!-- JQuery -->
+    <!-- JQuery CSS-->
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
     <!-- Internal CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/splide-default.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
     <!-- Internal JS language file -->
     <script src="./assets/js/languages.js"></script>
+    <!--Splide JS-->
+    <script defer src="./assets/js/splide.min.js"></script>
     <!-- JQuery JS -->
     <script defer src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script defer src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
@@ -36,17 +38,16 @@
     <script defer src="./assets/js/index.js"></script>
     <script defer src="./assets/js/weather.js"></script>
     <script defer src="./assets/js/localStorage.js"></script>
-    <script defer src="./assets/js/googleApi.js"></script>
+    <script defer src="./assets/js/extraApi.js"></script>
     <title>Travel Application</title>
 </head>
-
 <body>
     <header>
         <nav class="navbar uk-flex">
             <a href="#home" class="nav-brand">Oui<span>T</span>ravel</a>
             <ul class="nav-menu">
                 <li class="nav-item">
-                    <a href="#home" class="nav-link">Home</a>
+                    <a href="#home" class="nav-link" id="home">Home</a>
                 </li>
                 <li class="nav-item">
                     <a href="#facts" class="nav-link">Country</a>
@@ -72,6 +73,22 @@
                 <input type="text" id="search" placeholder="Country">
             </div>
         </div>
+        <section class="splide" aria-label="Splide Basic HTML Example">
+            <div class="splide__track  slide">
+                  <ul class="splide__list">
+                      <li class="splide__slide"><img id="img1" ></li>
+                      <li class="splide__slide"><img id="img2" ></li>
+                      <li class="splide__slide"><img id="img3" ></li>
+                      <li class="splide__slide"><img id="img4" ></li>
+                      <li class="splide__slide"><img id="img5" ></li>
+                      <li class="splide__slide"><img id="img6" ></li>
+                      <li class="splide__slide"><img id="img7" ></li>
+                      <li class="splide__slide"><img id="img8" ></li>
+                      <li class="splide__slide"><img id="img9" ></li>
+                      <li class="splide__slide"><img id="img10" ></li>
+                  </ul>
+            </div>
+        </section>
         <div id="content"></div>
         <div class="weather uk-flex"></div>
     </main>

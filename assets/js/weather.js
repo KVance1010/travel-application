@@ -27,6 +27,7 @@ const weatherForecast = function (city) {
 						',' +
 						lon +
 						'&scale=2&size=150x150&zoom=7&key=AIzaSyBSokTJWEqsYy2vJP9SpktywdnyQXrFzuw';
+						console.log(backImg)
 					let lonLatURL =
 						'lat=' + lat + '&lon=' + lon + '&units=imperial&appid=' + apiKey;
 					fetch(currentForecast + lonLatURL).then(function (response) {
