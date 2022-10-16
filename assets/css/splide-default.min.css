@@ -56,7 +56,12 @@
   position: relative;
 }
 .splide__slide img {
-  vertical-align: bottom;
+  display: box;
+  position:relative;
+  width: 45%;
+  height: 80%;
+  left:25%;
+  justify-content: center;
 }
 .splide__spinner {
   animation: splide-loading 1s linear infinite;

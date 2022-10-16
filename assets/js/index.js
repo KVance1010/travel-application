@@ -282,6 +282,10 @@ function langContent() {
 
 // Connects to the server side APIs and collects information about the country and sets the language for the translator
 function runSearch(name) {
+	$("#content").removeAttr("style")
+	$("#weather").removeAttr("style")
+	$("#carouselID").removeAttr("style")
+	$("#homePage").attr("style","display:none")
 	cityImages(name);
 	fetch('https://restcountries.com/v3.1/name/' + name)
 		.then(function (response) {
@@ -312,6 +316,7 @@ searchResult.addEventListener('keypress', (event) => {
 			}
 		}
 		if (onList === 1) {
+			
 			countryName = validate;
 			runSearch(validate);
 			addToSearchList(validate);
@@ -332,3 +337,22 @@ navItems.forEach((event) =>
 		navMenu.classList.remove('active');
 	})
 );
+$("#carouselID").attr("style","display: none")
+function homeFunk(){
+	$("#homePage").removeAttr("style")
+	$("#carouselID").attr("style","display: none")
+	$("#content").attr("style","display: none")
+	$("#weather").attr("style","display: none")
+	console.log("check")
+}
+$("#home").on("click", homeFunk)
+
+function countryFunk(){
+	$("#homePage").attr("style","display: none")
+	$("#carouselID").removeAttr("style")
+	$("#content").removeAttr("style")
+	$("#weather").removeAttr("style")
+	console.log("check")
+}
+$("#countryNav").on("click", countryFunk)
+
