@@ -16,7 +16,7 @@ const navMenu = document.querySelector('.nav-menu');
 const navItems = document.querySelectorAll('.nav-link');
 const footerDate = document.querySelector('#date');
 const hero = document.querySelector('.hero-section');
-const slider = document.querySelector('.slider');
+const slider = document.querySelector('.slide');
 
 // Connection object
 const options = {
