@@ -49,4 +49,3 @@ function alertModal(){
 function alertModal2(){
   $( "#dialog2" ).dialog();
 }
-
