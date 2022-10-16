@@ -1,4 +1,6 @@
 let backImg;
+let DateTime = luxon.DateTime.local();
+let zoneIndex;
 const weatherDiv = document.querySelector('.weather');
 
 // fetch the weather url
@@ -32,9 +34,12 @@ const weatherForecast = function (city) {
                             langContent();
 							response.json().then(function (cityData) {
 								let card = document.createElement('div');
-								card.setAttribute('class', 'card');
+								card.setAttribute('class', 'card uk-card uk-card-default uk-card-body');
 								let date = document.createElement('div');
-								date.textContent = moment().add(0, 'days').format('L');
+								let DateTime = luxon.DateTime.now();
+								let codeIndex = codesArr.indexOf(cityData.sys.country)
+								zoneIndex = zonesArr[codeIndex]
+								date.textContent = DateTime.setZone(zoneIndex).toLocaleString();
 								let weatherIcon = document.createElement('img');
 								weatherIcon.setAttribute(
 									'src',
@@ -65,7 +70,7 @@ const weatherForecast = function (city) {
 								weatherDiv.append(card);
 							});
 						} else {
-// TODO: need to add an alert of some sort alert('Error: ' + response.statusText);
+
 						}
 						fetch(baseUrl + lonLatURL).then(function (response) {
 							if (response.ok) {
@@ -73,17 +78,17 @@ const weatherForecast = function (city) {
 									displayDaysTwoToSix(cityData);
 								});
 							} else {
-// TODO: need to add an alert of some sort alert('Error: ' + response.statusText);
+
 							}
 						});
 					});
 				});
 			} else {
-// TODO: need to add an alert of some sort alert alert('Error: ' + response.statusText);
+
 			}
 		})
 		.catch(function (error) {
-// TODO: need to add an alert of some sort alert alert('Unable to connect' + error.message);
+
 		});
 };
 
@@ -92,9 +97,11 @@ const displayDaysTwoToSix = function (cityData) {
 	let j = 5;
 	for (let i = 1; i < 6; i++, j += 8) {
 		let card = document.createElement('div');
-		card.setAttribute('class', 'card');
+		card.setAttribute('class', 'card uk-card uk-card-default uk-card-body uk-margin-left');
 		let date = document.createElement('div');
-		date.textContent = moment().add(i, 'days').format('L');
+		//date.textContent = moment().add(i, 'days').format('L');
+		let DateTime = luxon.DateTime.now();
+		date.textContent = DateTime.plus({days: i}).setZone(zoneIndex).toLocaleString();
 		let weatherIcon = document.createElement('img');
 		weatherIcon.setAttribute(
 			'src',
