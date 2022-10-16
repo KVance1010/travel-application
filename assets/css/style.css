@@ -119,6 +119,10 @@ header {
 	text-align: center;
 	width: 40%;
 }
+.slide {
+	display: "none";
+	top: 60px;
+}
 
 /**** Facts Content / Map and Common Sayings ****/
 .info-container {
