@@ -282,6 +282,8 @@ function langContent() {
 
 // Connects to the server side APIs and collects information about the country and sets the language for the translator
 function runSearch(name) {
+	$("#content").removeAttr("style")
+	$("#weather").removeAttr("style")
 	$("#carouselID").removeAttr("style")
 	$("#homePage").attr("style","display:none")
 	cityImages(name);

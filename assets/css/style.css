@@ -371,3 +371,7 @@ footer button {
 		height: 80px;
 	}
 }
+
+.splide__list{
+	height: 500px;
+}
