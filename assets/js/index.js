@@ -1,4 +1,6 @@
 /************************  Global Variables / Selectors *********************************/
+
+// new Splide( '.splide' ).mount();
 let textVal;
 let rate;
 let type;
@@ -16,7 +18,7 @@ const navMenu = document.querySelector('.nav-menu');
 const navItems = document.querySelectorAll('.nav-link');
 const footerDate = document.querySelector('#date');
 const hero = document.querySelector('.hero-section');
-const slider = document.querySelector('.slide');
+const slider = document.querySelector('.splide');
 
 // Connection object
 const options = {
@@ -34,13 +36,13 @@ const options = {
 function displayNavBar() {
 	navMenu.style.display = 'flex';
 	hero.style.display = 'none';
-	slider.style.display = 'block';
+	// slider.style.display = 'block';
 }
 
 // Hide 
 function showHome() {
 	hero.style.display = 'none';
-	slider.style.display = 'none';
+	// slider.style.display = 'none';
 }
 
 
