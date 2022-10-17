@@ -49,20 +49,28 @@ Please refer to the LICENSE in the repo.
 
 ## Screenshots
 
-<img width="1436" alt="Screen Shot 2022-10-14 at 1 01 39 AM" src="https://user-images.githubusercontent.com/61335608/195794607-edba4d44-d8f1-4c46-90b7-842d99f03a37.png">
+<img width="1440" alt="Screen Shot 2022-10-16 at 10 57 15 PM" src="https://user-images.githubusercontent.com/61335608/196099864-a4c6000f-b971-4142-8edf-7dd31dd751e8.png">
 
-<img width="326" alt="Screen Shot 2022-10-14 at 1 02 21 AM" src="https://user-images.githubusercontent.com/61335608/195794756-a6a16616-768e-4cce-b5a0-5ab6782e4592.png">
+<img width="332" alt="Screen Shot 2022-10-16 at 10 57 53 PM" src="https://user-images.githubusercontent.com/61335608/196099949-2f92932a-f4ae-488e-8dd6-619d010e1046.png">
 
-<img width="1440" alt="Screen Shot 2022-10-14 at 1 02 41 AM" src="https://user-images.githubusercontent.com/61335608/195794817-b55852f5-e94a-48f5-9a28-b844dfe003ca.png">
+<img width="1440" alt="Screen Shot 2022-10-16 at 10 58 26 PM" src="https://user-images.githubusercontent.com/61335608/196100017-a3ec838b-eb31-4700-b503-94e78ff097e6.png">
 
-<img width="1440" alt="Screen Shot 2022-10-14 at 1 03 04 AM" src="https://user-images.githubusercontent.com/61335608/195794892-bccb7c9b-d614-48e9-861c-ed23cfe26d19.png">
+<img width="1440" alt="Screen Shot 2022-10-16 at 10 58 48 PM" src="https://user-images.githubusercontent.com/61335608/196100077-4e1787ac-9475-4210-9c86-6963e6514b90.png">
 
-<img width="1440" alt="Screen Shot 2022-10-14 at 1 03 31 AM" src="https://user-images.githubusercontent.com/61335608/195794997-71c86238-e618-4fba-9490-84d9dee272ec.png">
+<img width="463" alt="Screen Shot 2022-10-16 at 10 59 01 PM" src="https://user-images.githubusercontent.com/61335608/196100110-548a3739-e4bd-47df-b804-b99b9e8580d8.png">
 
-<img width="1440" alt="Screen Shot 2022-10-14 at 1 03 54 AM" src="https://user-images.githubusercontent.com/61335608/195795074-e96b36d0-f75b-4150-9968-29c5ac375254.png">
+<img width="1440" alt="Screen Shot 2022-10-16 at 10 59 17 PM" src="https://user-images.githubusercontent.com/61335608/196100156-7487ddc7-5167-4af5-83f8-740348c4e93f.png">
 
-<img width="396" alt="Screen Shot 2022-10-14 at 1 04 44 AM" src="https://user-images.githubusercontent.com/61335608/195795275-82ec7b78-13e4-4d62-a2a9-2ee2015d34ee.png">
+<img width="1440" alt="Screen Shot 2022-10-16 at 10 59 34 PM" src="https://user-images.githubusercontent.com/61335608/196100199-9103deeb-6f4a-483c-ba18-d2e721b2b556.png">
 
-<img width="905" alt="Screen Shot 2022-10-14 at 1 08 39 AM" src="https://user-images.githubusercontent.com/61335608/195796106-bfca6b68-39bc-4452-bd08-b16d7bae333a.png">
+<img width="470" alt="Screen Shot 2022-10-16 at 10 59 47 PM" src="https://user-images.githubusercontent.com/61335608/196100234-7d68702b-4d23-4c67-ae41-a51b17042e19.png">
 
+<img width="1438" alt="Screen Shot 2022-10-16 at 11 00 06 PM" src="https://user-images.githubusercontent.com/61335608/196100282-aa3e6571-ff83-4cac-814d-bf489405c876.png">
 
+<img width="894" alt="Screen Shot 2022-10-16 at 11 00 33 PM" src="https://user-images.githubusercontent.com/61335608/196100343-2ab3995a-130e-4046-a2e1-24cdde4078b4.png">
+
+## Code Snippet
+
+<img width="360" alt="Screen Shot 2022-10-16 at 11 02 58 PM" src="https://user-images.githubusercontent.com/61335608/196100658-f5175ec3-b20d-4714-b46e-fae70734ff6f.png">
+
+The following snippet uses fetch to extract country data from an API. We then collect specific data from the API to dynamically generate and display on our webpage, such as the langauge spoken and a code for each country that we can reference for other parts of the webpage, such as finding dates and currency.
