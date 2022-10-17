@@ -61,7 +61,7 @@ const weatherForecast = function (city) {
 									'Wind: ' + cityData.wind.speed + ' MPH';
 								let humidity = document.createElement('div');
 								humidity.textContent =
-									'Humidity: ' + cityData.main.humidity;
+									'Humidity: ' + cityData.main.humidity + ' %';
 
 								card.appendChild(date);
 								card.appendChild(weatherIcon);
@@ -121,7 +121,7 @@ const displayDaysTwoToSix = function (cityData) {
 		let wind = document.createElement('div');
 		wind.textContent = 'Wind: ' + cityData.list[j].wind.speed + ' MPH';
 		let humidity = document.createElement('div');
-		humidity.textContent = 'Humidity: ' + cityData.list[j].main.humidity;
+		humidity.textContent = 'Humidity: ' + cityData.list[j].main.humidity + ' %';
 
 		card.appendChild(date);
 		card.appendChild(weatherIcon);
