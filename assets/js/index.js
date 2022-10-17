@@ -32,7 +32,6 @@ const options = {
 // Displays the nav bar after a search is entered
 function displayNavBar() {
 	navMenu.style.display = 'flex';
-	// hero.style.display = 'none';
 }
 
 // Converts dollar into foreign currency
@@ -199,7 +198,6 @@ function genContent(data) {
 
 // Creates a map of the city and displays common sayings
 function langContent() {
-	// let textTest = ['hello'];
 	let translated = [
 		'Hello ',
 		'Thank you ',
