@@ -140,6 +140,8 @@ header {
 .sideBar-container h2 {
 	color: var(--textColor);
 	font-size: xxx-large;
+	font-weight: bolder;
+	text-align: center;
 }
 .sideBar-container div {
 	color: var(--textColor);
@@ -226,9 +228,11 @@ footer button {
 	.sideBar-container {
 		padding: 25px;
 		color: var(--textColor);
+		text-align: center;
 	}
 	.sideBar-container h2 {
 		font-size: xx-large;
+		color: red;
 	}
 	.sideBar-container div {
 		margin: 20px;
