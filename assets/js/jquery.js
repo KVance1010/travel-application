@@ -3,7 +3,7 @@ let repeat = 1;
 let countryArr = [];
 let zonesArr = []
 let codesArr = []
-const timezone = 'http://api.timezonedb.com/v2.1/list-time-zone?key=VHTN1OI9A887&format=json';
+const timezone = 'https://api.timezonedb.com/v2.1/list-time-zone?key=VHTN1OI9A887&format=json';
 // Autocomplete widget for searching a country
 $(function () {
   fetch('https://restcountries.com/v3.1/all')
