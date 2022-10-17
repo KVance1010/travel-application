@@ -74,3 +74,13 @@ Please refer to the LICENSE in the repo.
 <img width="360" alt="Screen Shot 2022-10-16 at 11 02 58 PM" src="https://user-images.githubusercontent.com/61335608/196100658-f5175ec3-b20d-4714-b46e-fae70734ff6f.png">
 
 The following snippet uses fetch to extract country data from an API. We then collect specific data from the API to dynamically generate and display on our webpage, such as the langauge spoken and a code for each country that we can reference for other parts of the webpage, such as finding dates and currency.
+
+## Splide Library
+
+<img width="734" alt="Screen Shot 2022-10-17 at 2 24 17 PM" src="https://user-images.githubusercontent.com/61335608/196286371-092f63c6-e793-4c62-870a-13209be2ba36.png">
+
+<img width="358" alt="Screen Shot 2022-10-17 at 2 24 44 PM" src="https://user-images.githubusercontent.com/61335608/196286419-8076ffed-8117-4a11-911e-9cc4b473d4e6.png">
+
+For our project, we implemented a library called Splide. In order to include this library, we had to download the javascript and css source code. We then included those two given files in our program and altered/referenced the material that we needed. For our project, we used the library to showcase images for inputted countries via a carousel.
+
+[Link to Splide](https://splidejs.com/guides/options/)
