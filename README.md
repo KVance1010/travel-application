@@ -26,6 +26,26 @@ N/A
 
 Please refer to the LICENSE in the repo.
 
+## Technologies
+HTML
+CSS
+JavaScript
+GitHub
+GIt
+
+API's:
+https://api.exchangerate.host/latest?base=USD
+https://translated-mymemory---translation-memory.p.rapidapi.com/api/get?langpair=en
+https://restcountries.com/v3.1/name/
+https://api.openweathermap.org/data/2.5/forecast
+https://maps.googleapis.com/maps/api/staticmap
+
+Framework:
+https://cdn.jsdelivr.net/npm/uikit@3.15.10/dist/js/uikit.min.js
+https://cdn.jsdelivr.net/npm/uikit@3.15.10/dist/css/uikit.min.css
+
+other technologies:
+https://cdnjs.cloudflare.com/ajax/libs/luxon/3.0.4/luxon.min.js
 
 ## Features
 
