@@ -28,16 +28,25 @@ Please refer to the LICENSE in the repo.
 
 ## Technologies
 HTML
+
 CSS
+
 JavaScript
+
 GitHub
+
 GIt
 
-API's:
+#API's:
+
 https://api.exchangerate.host/latest?base=USD
+
 https://translated-mymemory---translation-memory.p.rapidapi.com/api/get?langpair=en
+
 https://restcountries.com/v3.1/name/
+
 https://api.openweathermap.org/data/2.5/forecast
+
 https://maps.googleapis.com/maps/api/staticmap
 
 Framework:
